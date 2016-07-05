@@ -10,226 +10,237 @@ app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $locati
     	$scope.AlbumAberto = id;
 
     }
+	
+	
+	$http.get("php/fotos.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.albuns = response.data.albuns;
+		$scope.fotos = response.data.fotos;
+		
+    });
+	
 
-    $scope.albuns = [
+	
+	$scope.albuns2 = [
     	{
     		"id":1,
     		"titulo": "XV Jornada Regional do IJRS",
-    		"imgUrl": "img/portfolio/01.jpg",
+    		"imgUrl": "01.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	},
     	{
     		"id":2,
     		"titulo": "Consciência Feminina",
-    		"imgUrl": "img/portfolio/02.jpg",
+    		"imgUrl": "02.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	},
     	{
     		"id":3,
     		"titulo": "Departamento de Psicologia",
-    		"imgUrl": "img/portfolio/03.jpg",
+    		"imgUrl": "03.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	},
     	{
     		"id":4,
     		"titulo": "XV Jornada Regional do IJRS",
-    		"imgUrl": "img/portfolio/02.jpg",
+    		"imgUrl": "02.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	},
     	{
     		"id":5,
     		"titulo": "Consciência Feminina",
-    		"imgUrl": "img/portfolio/03.jpg",
+    		"imgUrl": "03.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	},
     	{
     		"id":6,
     		"titulo": "Departamento de Psicologia",
-    		"imgUrl": "img/portfolio/01.jpg",
+    		"imgUrl": "01.jpg",
     		"text": "Aliquet rutrum dui a varius. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Quis placerat dui. Duis lacinia nisi sit ansequat lorem nunc, nec bibendum erat volutpat ultricies."
     	}
     ];
+	
 
-    $scope.fotos = [
+    $scope.fotos2 = [
     	{
     		"id":1,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/01.jpg"
+    		"album":1,
+    		"imgUrl":"01.jpg"
     	},
     	{
     		"id":2,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/03.jpg"
+    		"album":1,
+    		"imgUrl":"03.jpg"
     	},
     	{
     		"id":3,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/02.jpg"
+    		"album":1,
+    		"imgUrl":"02.jpg"
     	},
     	{
     		"id":4,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/04.jpg"
+    		"album":1,
+    		"imgUrl":"04.jpg"
     	},
     	{
     		"id":5,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/06.jpg"
+    		"album":1,
+    		"imgUrl":"06.jpg"
     	},
     	{
     		"id":6,
-    		"almbum":1,
-    		"imgUrl":"img/portfolio/05.jpg"
+    		"album":1,
+    		"imgUrl":"05.jpg"
     	},
     	{
     		"id":1,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/01.jpg"
+    		"album":2,
+    		"imgUrl":"01.jpg"
     	},
     	{
     		"id":2,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/03.jpg"
+    		"album":2,
+    		"imgUrl":"03.jpg"
     	},
     	{
     		"id":3,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/02.jpg"
+    		"album":2,
+    		"imgUrl":"02.jpg"
     	},
     	{
     		"id":4,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/04.jpg"
+    		"album":2,
+    		"imgUrl":"04.jpg"
     	},
     	{
     		"id":5,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/06.jpg"
+    		"album":2,
+    		"imgUrl":"06.jpg"
     	},
     	{
     		"id":6,
-    		"almbum":2,
-    		"imgUrl":"img/portfolio/05.jpg"
+    		"album":2,
+    		"imgUrl":"05.jpg"
     	},
     	{
     		"id":1,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/01.jpg"
+    		"album":3,
+    		"imgUrl":"01.jpg"
     	},
     	{
     		"id":2,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/03.jpg"
+    		"album":3,
+    		"imgUrl":"03.jpg"
     	},
     	{
     		"id":3,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/02.jpg"
+    		"album":3,
+    		"imgUrl":"02.jpg"
     	},
     	{
     		"id":4,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/04.jpg"
+    		"album":3,
+    		"imgUrl":"04.jpg"
     	},
     	{
     		"id":5,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/06.jpg"
+    		"album":3,
+    		"imgUrl":"06.jpg"
     	},
     	{
     		"id":6,
-    		"almbum":3,
-    		"imgUrl":"img/portfolio/05.jpg"
+    		"album":3,
+    		"imgUrl":"05.jpg"
     	},
         {
             "id":1,
-            "almbum":4,
-            "imgUrl":"img/portfolio/01.jpg"
+            "album":4,
+            "imgUrl":"01.jpg"
         },
         {
             "id":2,
-            "almbum":4,
-            "imgUrl":"img/portfolio/03.jpg"
+            "album":4,
+            "imgUrl":"03.jpg"
         },
         {
             "id":3,
-            "almbum":4,
-            "imgUrl":"img/portfolio/02.jpg"
+            "album":4,
+            "imgUrl":"02.jpg"
         },
         {
             "id":4,
-            "almbum":4,
-            "imgUrl":"img/portfolio/04.jpg"
+            "album":4,
+            "imgUrl":"04.jpg"
         },
         {
             "id":5,
-            "almbum":4,
-            "imgUrl":"img/portfolio/06.jpg"
+            "album":4,
+            "imgUrl":"06.jpg"
         },
         {
             "id":6,
-            "almbum":4,
-            "imgUrl":"img/portfolio/05.jpg"
+            "album":4,
+            "imgUrl":"05.jpg"
         },
         {
             "id":1,
-            "almbum":5,
-            "imgUrl":"img/portfolio/01.jpg"
+            "album":5,
+            "imgUrl":"01.jpg"
         },
         {
             "id":2,
-            "almbum":5,
-            "imgUrl":"img/portfolio/03.jpg"
+            "album":5,
+            "imgUrl":"03.jpg"
         },
         {
             "id":3,
-            "almbum":5,
-            "imgUrl":"img/portfolio/02.jpg"
+            "album":5,
+            "imgUrl":"02.jpg"
         },
         {
             "id":4,
-            "almbum":5,
-            "imgUrl":"img/portfolio/04.jpg"
+            "album":5,
+            "imgUrl":"04.jpg"
         },
         {
             "id":5,
-            "almbum":5,
-            "imgUrl":"img/portfolio/06.jpg"
+            "album":5,
+            "imgUrl":"06.jpg"
         },
         {
             "id":6,
-            "almbum":5,
-            "imgUrl":"img/portfolio/05.jpg"
+            "album":5,
+            "imgUrl":"05.jpg"
         },
         {
             "id":1,
-            "almbum":6,
-            "imgUrl":"img/portfolio/01.jpg"
+            "album":6,
+            "imgUrl":"01.jpg"
         },
         {
             "id":2,
-            "almbum":6,
-            "imgUrl":"img/portfolio/03.jpg"
+            "album":6,
+            "imgUrl":"03.jpg"
         },
         {
             "id":3,
-            "almbum":6,
-            "imgUrl":"img/portfolio/02.jpg"
+            "album":6,
+            "imgUrl":"02.jpg"
         },
         {
             "id":4,
-            "almbum":6,
-            "imgUrl":"img/portfolio/04.jpg"
+            "album":6,
+            "imgUrl":"04.jpg"
         },
         {
             "id":5,
-            "almbum":6,
-            "imgUrl":"img/portfolio/06.jpg"
+            "album":6,
+            "imgUrl":"06.jpg"
         },
         {
             "id":6,
-            "almbum":6,
-            "imgUrl":"img/portfolio/05.jpg"
+            "album":6,
+            "imgUrl":"05.jpg"
         }
 
     ];

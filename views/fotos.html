@@ -13,13 +13,13 @@
             <div class="col-md-4 cada-album" ng-repeat="album in albuns" ng-click="openAlbum(album.id)">
                 <div class="hover-bg">
                     <div class="hover-text off">
-                        <p>{{album.text}}</p>
+                        <p>{{album.text}}&nbsp;</p>
                     </div>
-                    <img ng-src="{{album.imgUrl}}" alt="..." class="img-responsive">
+                    <img ng-src="../upload/{{album.imgUrl}}" alt="..." class="img-responsive">
                 </div>
                 <div class="team-detail text-center">
                     <br>
-                    <h3>{{album.titulo}}</h3>
+                    <h3>{{album.titulo}}&nbsp;</h3>
                     <br>
                     <ul class="list-inline social"> 
                         <li><a href="javascript:void(0)" ng-click="openAlbum(album.id)" class="btn btn-primary tf-btn color">Abrir Album</a></li>
@@ -28,10 +28,21 @@
             </div>
         </div>
     </div>
-    <div class="container" ng-hide="!AlbumAberto" ng-show="AlbumAberto">
+    <div class="container" >
         <div class="row">
-            <div class="col-md-4 hover-bg cada-foto" ng-repeat="foto in fotos" ng-if="foto.almbum == AlbumAberto">
-                <img ng-src="{{foto.imgUrl}}" alt="..." class="img-responsive">
+            <div class="col-md-4 hover-bg cada-foto" ng-repeat="foto in fotos" ng-if="foto.album == AlbumAberto">
+               <div class="box">
+                        <div class="hover-bg">
+                            <div class="hover-text off">
+                                <a title="Mobile Application" href="img/portfolio/02@2x.jpg" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/02@2x.jpg">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                                <a href="#"><i class="fa fa-chain"></i></a><!-- change # with your url to link it to another page -->
+                            </div>
+                            <img ng-src="../upload/{{foto.imgUrl}}" alt="..." class="img-responsive">
+                        </div>
+                    </div>
+                     
             </div>
         </div>
     </div>

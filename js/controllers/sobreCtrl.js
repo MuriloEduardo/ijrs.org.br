@@ -5,7 +5,17 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
 	$scope.go = function (route) {
         $location.path(route);
     }
-    $scope.analistas = [
+	
+	var dadosForm
+	$http.post('php/dados.php', dadosForm).success(function(data, status){
+
+     // Angular
+     $scope.array.push(data);
+
+	})
+
+    /*
+	$scope.analistas = [
     	{
     		img: "",
     		nome: "Adriana S.Ferreira",
@@ -143,6 +153,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		sex: "f"
     	}
     ];
+	*/
     $scope.diretores = [
     	{
     		img: "",

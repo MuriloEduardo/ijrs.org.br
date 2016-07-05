@@ -10,7 +10,18 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
     $scope.openLinkArquivo = function(route) {
     	$window.href = route;
     }
+	
+	$http.get("php/biblioteca.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.monografias = response.data.monografias;
+		$scope.entrevistas = response.data.entrevistas;
+		$scope.resumos = response.data.resumos;
+		$scope.artigos = response.data.artigos;
+		$scope.acervo = response.data.acervo;
+		
+    });
 
+   /*
     $scope.monografias = [
     	{
     		titulo: 'A ALMA NO COMPASSO DO TANGO',
@@ -43,11 +54,13 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
     		resumo: 'Este estudo aborda o fenômeno do Tango (aqui com ênfase na dança do tango-salão) na ótica da Psicologia Analítica, buscando compreender simbolicamente os motivos arquetípicos de sua universalidade, desde sua origem até a atualidade, detendo-se também em perceber como a alma se expressa neste universo particular. Analisa alguns dos principais elementos desta dança: A caminhada, a improvisação, a dissociação, o abraço e o terceiro eixo, estabelecendo uma analogia destes movimentos presentes na dança do tango e o movimento da psique em direção à integração dos opostos complementares, não só a partir da imagem do casal que dança, mas também com relação aos processos intra-psíquicos que ocorrem com cada um dos dançarinos envolvidos.'
     	}
     ];
+	*/
 
     $scope.viewsBiblioteca = function(view) {
     	$scope.viewAberta = view;
     }
-
+	
+	/*
     $scope.entrevistas = [
     	{
     		titulo: 'O suposto fim do mundo',
@@ -74,4 +87,6 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
     		resumo: 'A analista junguiana Corina Post concedeu entrevista no programa BOM DIA RIO GRANDE sobre O suposto fim do mundo. Confira!'
     	}
     ];
+	*/
+	
 });

@@ -19,21 +19,21 @@
         </div>
 
       <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #3 -->
-        <div class="count-box">
+        <div ng-click="viewsBiblioteca(3)" class="count-box" ng-class="{active: viewAberta == 3}">
           <i class="fa fa-file-text"></i>
           <p class="small">Resumo de monografias</p>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #4 -->
-        <div class="count-box">
+        <div ng-click="viewsBiblioteca(4)" class="count-box" ng-class="{active: viewAberta == 4}">
           <i class="fa fa-newspaper-o"></i>
           <p class="small">Artigos</p>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #5 -->
-        <div class="count-box last">
+        <div ng-click="viewsBiblioteca(5)" class="count-box" ng-class="{active: viewAberta == 5}">
           <i class="fa fa-female"></i>
           <p class="small">Acervo Malvina Mcneill</p>
         </div>
@@ -68,18 +68,77 @@
           <h4>{{content.subTitulo}}</h4>
           <p>{{content.resumo}}</p>
           <br>
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Link para download <i class="fa fa-cloud-download"></i></a>
+          <a href="http://ijrs.org.br/includes/_incDownload.php?arquivo={{content.link}}" class="btn btn-primary tf-btn color">Link para download <i class="fa fa-cloud-download"></i></a>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!--entrevistas-->
 <div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 2">
   <h1>Entrevistas</h1>
   <h3>Aqui você pode assistir algumas entrevistas dadas pelos profissionais do IJRS</h3>
   <br><br>
   <div class="row">
     <div class="col-md-10 col-md-offset-1 entrevistas" ng-repeat="content in entrevistas">
+      <div class="row vertical-align">
+        <div class="col-md-10">
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--entrevistas-->
+<!--resumo-->
+<div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 3">
+  <h1>Resumo das Monografias</h1>
+  <h3>Aqui você pode ler o resumo das monografias do nosso acervo.</h3>
+  <br><br>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in resumos">
+      <div class="row vertical-align">
+        <div class="col-md-10">
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--artigos-->
+<div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 4">
+  <h1>Artigos</h1>
+  <h3>Artigos publicados pelos profissionais e analistas do IJRS.</h3>
+  <br><br>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in artigos">
+      <div class="row vertical-align">
+        <div class="col-md-10">
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--acervo-->
+<div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 5">
+  <h1>Acervo de Malvina McNeill</h1>
+  <h3>Confira o acervo de Malvina McNeill.</h3>
+  <br><br>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in acervo">
       <div class="row vertical-align">
         <div class="col-md-10">
           <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
