@@ -23,7 +23,7 @@
                             <li><a href="javascript:void(0)" ng-click="openAgenda(agenda)">Ler Mais</a></li>
                         </ul>
                         <ul class="list-inline meta-detail pull-right">
-                            <li><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> {{agenda.likes}}</li>
+                            <li><a href="javascript:void(0)" ng-click="like(agenda.id)"><i class="fa fa-heart"></i></a> {{agenda.likes}}</li>
                             <li><i class="fa fa-eye"></i> {{agenda.views}}</li>
                         </ul>
                     </div>
@@ -49,12 +49,45 @@
                 <div class="post-meta">
                     <ul class="list-inline metas pull-left">
                         <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li>
-                        <li><a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar</a></li>
+                        <li><a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar para Agenda</a></li>
                     </ul>
                     <ul class="list-inline meta-detail pull-right">
-                        <li><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> {{objOpen.likes}}</li>
+                        <li><a href="javascript:void(0)" ng-click="like(objOpen.id)"><i class="fa fa-heart"></i></a> {{objOpen.likes}}</li>
                         <li><i class="fa fa-eye"></i> {{objOpen.views}}</li>
                     </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="media post">
+                        <div class="media-body">
+                            <div class="row vertical-align">
+                                <div class="col-md-10">
+                                    <textarea name="" id="" rows="1" class="form-control" placeholder="Novo comentário" ng-model="comentario.texto"></textarea>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="javascript:void(0)" class="btn btn-primary tf-btn color form-control" ng-click="comentar(comentario)">Comentar</a>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="post-wrap fade-in" ng-repeat="comentario in objOpen.comentarios">
+                        <div class="media post">
+                            <div class="media-body">
+                                <a href="#">
+                                    <h5 class="media-heading"><strong>{{comentario.nome}}</strong></h5>
+                                    <h6 class="media-heading"><strong>{{comentario.email}}</strong></h6>
+                                </a>
+                                <br>
+                                <p>{{comentario.texto}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

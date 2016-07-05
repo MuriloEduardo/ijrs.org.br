@@ -1,0 +1,255 @@
+<div id="feature" class="gray-bg">
+    <div class="container">
+        <div class="row" role="tabpanel">
+            <div class="col-md-4">
+
+                <ul class="features nav nav-pills nav-stacked" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#f1" aria-controls="f1" role="tab" data-toggle="tab">
+                            <span class="fa fa-user"></span>
+                            Analistas<br><small>Conheça todos nossos analistas</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f2" target="_self" aria-controls="f2" role="tab" data-toggle="tab">
+                            <span class="fa fa-university"></span>
+                            Nossa historia<br><small>Foi assim que tudo começou</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f3" target="_self" aria-controls="f3" role="tab" data-toggle="tab">
+                            <span class="fa fa-users"></span>
+                            Diretoria Biênio 2015/2017<br><small>Nossos diretores</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f4" target="_self" aria-controls="f4" role="tab" data-toggle="tab">
+                            <span class="fa fa-user-md"></span>
+                            Psicologia Analítica<br><small>Saiba mais sobre essa técnica</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f5" target="_self" aria-controls="f5" role="tab" data-toggle="tab">
+                            <span class="fa fa-cogs"></span>
+                            Departamentos<br><small>nos dividimos para somar</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f6" target="_self" aria-controls="f6" role="tab" data-toggle="tab">
+                            <span class="fa fa-fire"></span>
+                            Proposta<br><small>é isso que propomos</small>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#f7" target="_self" aria-controls="f7" role="tab" data-toggle="tab">
+                            <span class="fa fa-graduation-cap"></span>
+                            Profissionais do IJRS<br><small>Informações sobre os profissionais do IJRS</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-8"> 
+                <div class="tab-content features-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="f1">
+                        <div class="col-md-12 no-padding-right">
+                            <div class="search-head">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaAnalistas">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row cada-anal" ng-repeat="analista in analistas | filter:buscaAnalistas">
+                                    <div class="detalhe-thin"></div>
+                                    <div class="col-md-2 col-xs-2">
+                                        <div class="img-perfil">
+                                            <img ng-src="img/profissionais/{{analista.nome}}.jpg" alt="{{analista.nome}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 col-xs-10">
+                                        <h4>{{analista.nome}}</h4>
+                                        <p ng-if="analista.endereco != ''"><strong><i class="fa fa-map-marker alinhado" aria-hidden="true"></i></strong> {{analista.endereco}}</p>
+                                        <p ng-if="analista.fone != ''"><strong><i class="fa fa-phone alinhado" aria-hidden="true"></i></strong> {{analista.fone}}</p>
+                                        <p ng-if="analista.email != ''"><strong><i class="fa fa-envelope alinhado" aria-hidden="true"></i></strong> <a href="mailto:{{analista.email}}">{{analista.email}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade historia" id="f2">
+                        <div class="head-bastante-texto bg-a">
+                            <h4>
+                                <div class="detalhe-thin"></div>
+                                Queremos nos apresentar
+                            </h4>
+                        </div>
+                        <p>O Instituto Junguiano do Rio Grande do Sul, filiado à AJB (Associação Junguiana do Brasil) e à IAAP (International Association for Analytical Psychology), é resultado do esforço de três analistas preocupados em semear no RS um campo fértil para que o pensamento de Jung pudesse se desenvolver de maneira criativa e profunda.</p>
+
+                        <p>No que pese o esforço de outras pessoas em desenvolver o pensamento junguiano, era necessário um espaço mais formalizado com todas as inserções possíveis e ligação com o movimento junguiano internacional. Cada um com sua história pessoal e profissional, encontraram-se Malvina McNeill do Instituto Junguiano de Los Angeles (Estados Unidos), mas filha da nossa terra, com Eliane Berenice Frota Luconi e Gelson Luis Roberto, ambos ligados ao Instituto Junguiano do Rio de Janeiro, missioneiros radicados em Porto Alegre.</p>
+
+                        <p>Depois de vários encontros, entre encantamentos, riquezas e descobertas mútuas, resolveram fundar o Instituto que foi aprovado em assembléia pela Associação Junguiana do Brasil. Com todas as formalidades e critérios estabelecidos, foi fundado em 30 de outubro de 2002, na cidade de Porto Alegre, em Assembléia Geral que reuniu então os membros fundadores: os analistas Eliane Berenice Frota Luconi, Gelson Luis Roberto e Malvina McNeill.</p>
+
+                        <p>Nesta Assembléia foi apreciada por unanimidade a indicação de Gelson Luis Roberto como primeiro Diretor Presidente do IJRS, desenvolvendo sua gestão pelo biênio 2002/2003. A Comissão Administrativa e Fiscal ficou sobre a responsabilidade de Eliane Berenice Frota Luconi e como Diretora de Ensino foi indicada e aprovada a Sra. Malvina McNeill.</p>
+
+                        <p>Como Associação de direito privado, de caráter civil, sem fins lucrativos, o IJRS destina sua renda e doações ao cumprimento de suas funções básicas, o desenvolvimento das idéias de Carl Gustav Jung e sua contribuição ao progresso da ciência psicológica. Assim, torna-se o quinto Instituto da AJB, integrando com São Paulo, Rio de Janeiro, Belo Horizonte e Campinas, uma grande rede de intercâmbio e desenvolvimento das idéias da Psicologia Analítica.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="f3">
+                        <div class="col-md-12 no-padding-right">
+                            <div class="search-head">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaDiretor">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row cada-anal" ng-repeat="diretor in diretores | filter:buscaDiretor">
+                                    <div class="detalhe-thin"></div>
+                                    <div class="col-md-12">
+                                        <h4><strong>{{diretor.cargo}}</strong></h4>
+                                    </div>
+                                    <div class="col-md-2 col-xs-2" ng-if="diretor.sex != ''">
+                                        <div class="img-perfil">
+                                            <img ng-src="img/profissionais/{{diretor.nome}}.jpg" alt="{{diretor.nome}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 col-xs-10">
+                                        <h4>{{diretor.nome}}</h4>
+                                        <p ng-if="diretor.endereco != ''"><strong><i class="fa fa-map-marker alinhado" aria-hidden="true"></i></strong> {{diretor.endereco}}</p>
+                                        <p ng-if="diretor.fone != ''"><strong><i class="fa fa-phone alinhado" aria-hidden="true"></i></strong> {{diretor.fone}}</p>
+                                        <p ng-if="diretor.email != ''"><strong><i class="fa fa-envelope alinhado" aria-hidden="true"></i></strong> <a href="mailto:{{diretor.email}}">{{diretor.email}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade historia" id="f4">
+                        <div class="head-bastante-texto bg-a">
+                            <h4>
+                                <div class="detalhe-thin"></div>
+                                Vale a pena conferir
+                            </h4>
+                        </div>
+                        
+                        <p>Não pretendemos aqui apresentar um estudo sistemático da teoria e da prática da psicologia analítica. Dado ao seu profundo e complexo dinamismo e riqueza teórica, pretendemos deixar alguma pinceladas dessa bagagem deixada por Carl Gustav Jung sem entrar em seus conceitos fundamentais que poderão ser consultados através dos diversos livros sobre o assunto.</p>
+                        
+                        <p>Murray Stein nos coloca Jung como um cartógrafo a desvendar o mapa da alma, deixando para nós uma descrição desse domínio que é a psique. Nascido em 26 de julho de 1875, Kesswill, Suiça, Jung teve uma trajetória de destaque e riqueza interna que o levaram a buscar o interesse pelo mundo da psique. Formou-se em medicina em 1900 e fez sua especialização em psiquiatria no Hospital Burghölzli, Zurique, até 1905. Foi assistente de Bleuler da qual teve sua primeira influência e principalmente de Pierret Janet com seus estudos na Salpetrière em Paris. Começou em 1907 uma troca intensa e mútua colaboração com Freud que durou até 1913, quando assinalou as diferenças teóricas com o pai da psicanálise através do trabalho "Psicologia do inconsciente", mais tarde publicado através do livro "Símbolos e Transformações". Neste material, Jung expressa uma postura que procura evitar o reducionismo sexual para o conceito de libido, assumindo o mesmo como energia psíquica e formalizando sua ruptura com Freud.</p>
+                        
+                        <p>A partir daí, começou um longo e criativo trabalho de vasculhar e apresentar uma descrição e compreensão da psique. Faleceu em 06 de junho de 1961 em sua casa em Küsnacht.</p>
+                        
+                        <p>Em sua obra, podemos designar os seguintes tópicos gerais abordados: estrutura da psique; dinâmica e atividade da psique e uma parte prática baseada nas anteriores, como método terapêutico.</p>
+                        
+                        <p>Mas o mais importante que queremos assinalar é a forma que ele apresenta a psique, de como se posiciona para entendê-la com seus pressupostos epistemológicos e paradigmáticos.</p>
+
+                        <p>Questões como o Self é o principio e o fim o mesmo tempo, que o arquétipo é uma força atratora e possui um poder transgresssivo, que a mente possui uma base mito-poética, que o inconsciente é produtivo-criativo, que existe uma dimensão objetiva no inconsciente, que imagem é realidade, que a psique depende do corpo e o corpo depende da psique, que a psique tem uma função auto-reguladora, que possui um aspecto não racional, que também possui uma dimensão religiosa, que está regida por uma visão finalista (teleológica), que se comporta de maneira paradoxal e que sempre busca a realização de sua totalidade, são algumas posições que nos dão uma pálida idéia do quão revolucionário e complexo é o pensamento junguiano.</p>
+
+                        <p>Jung refere que a psique é um objeto de estudo que tem propriedades que por ora só podem ser apreendidas através de antinomias, como é o caso da luz que apresenta tanto uma natureza ondulatória e corpuscular. Uma antinomia é, do ponto de vista filosófico, o conflito entre duas afirmações demonstradas ou refutadas aparentemente com igual rigor. Sendo a psique infinitamente mais complexa do que a luz, podemos reconhecer o quanto essa pluralidade de antinomias são necessárias.</p>
+
+                        <p>Isto exige que a psique seja olhada de diversas perspectivas e para chegarmos perto de uma descrição satisfatória da essência do psiquismo. Consequentemente, a abordagem junguiana baseia-se numa visão de complexidade, não-linear, sistêmica e de totalidade.</p>
+
+                        <p>Conceitos e idéias como complexidade, paradoxo, processualidade, intersubjetividade, auto-organização, instabilidade (não previsibilidade), a não separação sujeito/objeto, a contemplação de ambos os aspectos: inteligível e sensível, racional e mítico, são importantes para entender que Jung se situa numa concepção de ciência que está inserido mais perto de um paradigma que se tem caracterizado como holístico, ecológico-sistêmico, complexo ou pós-estruturalista.</p>
+
+                        <p>O importante a considerar é que para Jung a psique exige um foco mais ampliado de observação, a consideração que existe inúmera relações e que a idéia de coletivo, impessoal, como por exemplo o conceito de inconsciente coletivo, está em relação com o de pessoal, dando ênfase a dinâmica das diversas relações. Tanto, que o processo terapêutico é visto como um relacionamento onde ambas as partes estão mutualmente envolvidas num processo dialético. Com nos diz Jung, a atitude pessoal do paciente é o fator mais importante na neurose, bem como a atitude total do terapeuta. Para ele, todo o psicoterapeuta não só tem o seu método, ele próprio é esse método. É a personalidade do terapeuta o grande fator da cura.</p>
+
+                        <p>Assim é, que nossa página, na sua apresentação, oferece a citação que se lê num velho tratado: "Ars requirit totum hominem", como o grau mais elevado do trabalho psicoterapêutico.</p>
+
+                        <p>Jung teve uma extraordinária capacidade para intuir os grandes temas que agora, na atualidade, estão sendo pesquisadas e valorizadas. Muitas de suas idéias antecipam os interesses e preocupações intelectuais e socioculturais de nossa sociedade. Muitos autores apresentam Jung como alguém que oferece uma das contribuições mais notáveis e influentes do nosso século. A Psicologia Analítica, como nos relata Polly Young-Eisendrath e Terence Dawson, com seus eus descentrados, realidades múltiplas, função dos símbolos, a importância do desenvolvimento adulto, a autodescoberta espiritual e a necessidade de perspectivas multiculturais, nos apresenta uma gama de possibilidades e instrumentos para contribuir no entendimento da psique, para um estudo rico e abrangente da psicologia.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="f5">
+                        <div class="col-md-12 no-padding-right">
+                            <div class="search-head">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaDepartamentos">
+                            </div>
+                            <p class="text-center">Com o objetivo de ampliar o pensamento Junguiano o IJRS criou vários departamentos, os quais oferecerão ao público uma gama de informações e atividades. São eles:</p><br><br>
+                            <div class="col-md-12">
+                                <div class="row cada-anal" ng-repeat="departamento in departamentos | filter:buscaDepartamentos">
+                                    <div class="detalhe-thin"></div>
+                                    <div class="col-md-12">
+                                        <h4><strong>{{departamento.nome}}</strong></h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p>{{departamento.descricao}}</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <br>
+                                            <strong><i class="fa fa-quote-left alinhado" aria-hidden="true"></i>
+                                            {{departamento.tit_a | uppercase}}
+                                            <br /><br /></strong>
+                                            {{departamento.descricao_a}}
+
+                                            <br><br>
+                                            <strong><i class="fa fa-flag alinhado" aria-hidden="true"></i>
+                                            {{departamento.tit_b | uppercase}}
+                                            <br /><br /></strong>
+                                            <div ng-if="departamento.obs != ''">
+                                                <p>{{departamento.obs}}</p>
+                                            </div>
+                                            <p><strong ng-if="departamento.sub_tit_b != ''">{{departamento.sub_tit_b}}</strong> {{departamento.descricao_b}}</p>
+                                            <p><strong>{{departamento.sub_tit_c}}</strong> {{departamento.descricao_c}}</p>
+                                            <p><strong>{{departamento.sub_tit_d}}</strong> {{departamento.descricao_d}}</p>
+                                            <p><strong>{{departamento.sub_tit_e}}</strong> {{departamento.descricao_e}}</p>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" ng-if="departamento.coordenadoras != ''">
+                                        <h4>Cordenadora(s)</h4>
+                                        <p>{{departamento.coordenadoras}}</p>
+                                    </div>
+                                    <div class="col-md-12" ng-if="departamento.coordenacao != ''">
+                                        <h4>Cordenação</h4>
+                                        <p>{{departamento.coordenacao}}</p>
+                                    </div>
+                                    <div class="col-md-12" ng-if="departamento.colaboradoras != ''">
+                                        <h4>Colaborador(es)</h4>
+                                        <p>{{departamento.colaboradoras}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade historia" id="f6">
+                        <div class="head-bastante-texto bg-a">
+                            <h4>
+                                <div class="detalhe-thin"></div>
+                                Nos propomos à ...
+                            </h4>
+                        </div>
+                        
+                        <p>São propostas do IJRS, comprometer-se com programas culturais, o incentivo à produção de pesquisas e trabalhos científicos, colaborar com publicações bem como promover intercâmbios com Instituições afins e Universidades que qualifiquem a Psicologia Analítica.</p>
+                        
+                        <p>Atento à comunidade, propõem-se a criar sistemas de atendimento analítico para pessoas carentes. A criação de uma biblioteca especializada busca incentivar e promover a Psicologia Analítica e áreas do conhecimento relacionadas a profissionais, estudantes e população em geral sempre que for possível. Promover a formação e o aperfeiçoamento de analistas segundo os critérios da AJB (Associação Junguiana do Brasil) e da IAAP (International Association for Analytical Psychology) é fundamentalmente, um dos grandes compromissos do IJRS.</p>
+                        
+                        <p>Contudo, é como fruto da comunhão, de uma memória viva feita de história e sentido, que o IJRS vem se firmando como um lugar de diálogo, de celebração, num espírito de colaboração, onde cada encontro é uma experiência e não apenas uma troca de informação. Abrindo-se para o paradoxal, onde não há realizações sem fracassos, vitória sem derrotas, o Instituto é inspirado numa atitude de acolhimento e respeito, atento para tudo o que está acontecendo no mundo, na ciência, na natureza, no ser humano.</p>
+                        
+                        <p>Jamais esquecendo o "mistério maior" , a força que está além e aquém da vida humana que se desvenda no dia-a-dia de cada um, como um código que revela resultados mas que nunca anuncia garantias, o IJRS aprovou o disco de Phaistos como a logomarca que o caracteriza. Obra encontrada na Ilha de Creta, há 95 anos, o disco de Phaistos é um sistema de escrita antigo, que lingüistas ainda são incapazes de traduzir. Conduzindo a mensagem do mistério, esta imagem vem lembrar em cada comunicado do Instituto, que o psiquismo humano é um grande enigma e seu conteúdo, nunca é totalmente decifrável.</p>
+                        
+                        <p>Priorizando a educação, a formação e o aperfeiçoamento de seus membros, o IJRS zela pela seriedade da prática profissional, imbuindo-os da importância de se comprometerem por inteiro em todas suas atividades, para que não necessitem transmitir verdades, mas que sejam verdadeiros no que transmitem.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="f7">
+                        <div class="col-md-12 no-padding-right">
+                            <div class="search-head">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaProfissional">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row cada-anal" ng-repeat="profissional in profissionais | filter:buscaProfissional">
+                                    <div class="detalhe-thin"></div>
+                                    <div class="col-md-2 col-xs-2">
+                                        <div class="img-perfil">
+                                            <img ng-src="img/profissionais/{{profissional.nome}}.jpg" alt="{{profissional.nome}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 col-xs-10">
+                                        <h4>{{profissional.nome}}</h4>
+                                        <p ng-if="profissional.sobre != ''">{{profissional.sobre}}</p>
+                                        <p ng-if="profissional.endereco != ''"><strong><i class="fa fa-map-marker alinhado" aria-hidden="true"></i></strong> {{profissional.endereco}}</p>
+                                        <p ng-if="profissional.fone != ''"><strong><i class="fa fa-phone alinhado" aria-hidden="true"></i></strong> {{profissional.fone}}</p>
+                                        <p ng-if="profissional.email != ''"><strong><i class="fa fa-envelope alinhado" aria-hidden="true"></i></strong> <a href="mailto:{{profissional.email}}">{{profissional.email}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

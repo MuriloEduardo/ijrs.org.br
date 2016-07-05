@@ -1,0 +1,91 @@
+<div id="tf-contact" class="gray-bg" style="padding:130px 0">
+    <div class="container">
+        <div class="row"> <!-- outer row -->
+            <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
+                <div class="row"> <!-- nested row -->
+
+                    <!-- contact detail using col 4 -->
+                    <div class="col-md-4">  
+                        <div class="contact-detail">
+                            <i class="fa fa-map-marker"></i>
+                            <h4>Rua José de Alencar 630<br>Sala: 301 - Menino Deus - Porto Alegre</h4> <!-- address -->
+                        </div>
+                    </div>
+                    <!-- contact detail using col 4 -->
+                    <div class="col-md-4">
+                        <div class="contact-detail">
+                            <i class="fa fa-envelope-o"></i>
+                            <h4>contato@ijrs.org.br</h4><!-- email add -->
+                        </div>
+                    </div>
+
+                    <!-- contact detail using col 4 -->
+                    <div class="col-md-4">
+                        <div class="contact-detail">
+                            <i class="fa fa-phone"></i>
+                            <h4>(51) 30199789</h4> <!-- phone no. -->
+                        </div>
+                    </div>
+
+                </div> <!-- end nested row -->
+            </div> <!-- end col 10 with offset 1 to centered -->
+        </div><!-- end outer row -->
+
+        <div ng-hide="sucesso" class="row text-center fade-in"> <!-- contact form outer row with centered text-->
+            <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
+                <form id="contact-form" class="form" name="sentMessage"> <!-- form wrapper -->
+
+                    <div class="row"> <!-- nested inner row -->
+
+                        <!-- Input your name -->
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- Your name input -->
+                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.nome" placeholder="Seu nome *" id="name" required data-validation-required-message="Preencha seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <!-- Input your email -->
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- Your email input -->
+                                <input type="email" autocomplete="off" class="form-control" ng-model="contato.email" placeholder="Seu email *" id="email" required data-validation-required-message="Preencha seu email.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <!-- Input your Phone no. -->
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- Your email input -->
+                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.telefone" placeholder="Seu telofone *" id="phone" required data-validation-required-message="Preencha seu telefone">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                    </div><!-- end nested inner row -->
+
+                    <!-- Message Text area -->
+                    <div class="form-group"> <!-- Your email input -->
+                        <textarea class="form-control" rows="7" placeholder="Sua mensagem ..." id="message" ng-model="contato.mensagem" required data-validation-required-message="Preencha a mensagem"></textarea>
+                        <p class="help-block text-danger"></p>
+                        <div id="success"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="btn btn-primary tf-btn color" ng-click="enviarMensagem(contato)">Enviar mensagem</button> <!-- Send button -->
+                        </div>
+                    </div>
+
+                </form><!-- end form wrapper -->
+            </div><!-- end col 10 with offset 1 to centered -->
+        </div> <!-- end contact form outer row with centered text-->
+        <div ng-show="sucesso" class="row text-center fade-in successContact">
+            <div>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <div>
+                <p>Contato efetuado com sucesso!</p>
+                <p>Em breve receberá nosso retorno</p>
+            </div>
+        </div>
+    </div>
+</div>

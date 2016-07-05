@@ -1,4 +1,4 @@
-app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $location) {
+app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $location, $filter) {
 	
     $rootScope.activetab = $location.path();
 
@@ -26,6 +26,7 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     	{
     		id: 1,
     		open: false,
+            like: true,
     		img: 'img/blog/b02.jpg',
     		data: dataAtualFormatada(),
     		titulo: 'Tempor vestibulum turpis id ligula mi mattis.',
@@ -36,35 +37,48 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		comentarios: [
     			{
 	    			texto: 'Ahh! Que legal, adorei.',
-	    			img: '../img/blog/01.jpg',
-	    			nome: 'Murilo Eduardo',
-	    			email: 'muriloeduardoooooo@gmail.com'
+	    			nome: 'Nome do Usuario Logado',
+                    email: 'exemplo@gmail.com'
 	    		},
 	    		{
 	    			texto: 'Ahh! Que legal, adorei.',
-	    			img: '../img/blog/01.jpg',
-	    			nome: 'Murilo Eduardo',
-	    			email: 'muriloeduardoooooo@gmail.com'
+	    			nome: 'Nome do Usuario Logado',
+                    email: 'exemplo@gmail.com'
 	    		}
     		]
     	},
     	{
     		id: 2,
     		open: false,
+            like: true,
     		img: 'img/blog/b03.jpg',
     		data: dataAtualFormatada(),
     		titulo: 'Tempor vestibulum turpis id ligula mi mattis.',
     		resumo: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
     		texto: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
-    		likes: 10,
+    		likes: 18,
     		views: 234,
     		comentarios: [
     			{
 	    			texto: 'Ahh! Que legal, adorei.',
-	    			img: '../img/blog/01.jpg',
-	    			nome: 'Murilo Eduardo',
-	    			email: 'muriloeduardoooooo@gmail.com'
-	    		}
+	    			nome: 'Nome do Usuario Logado',
+	    			email: 'exemplo@gmail.com'
+	    		},
+                {
+                    texto: 'Ahh! Que legal, adorei.',
+                    nome: 'Nome do Usuario Logado',
+                    email: 'exemplo@gmail.com'
+                },
+                {
+                    texto: 'Ahh! Que legal, adorei.',
+                    nome: 'Nome do Usuario Logado',
+                    email: 'exemplo@gmail.com'
+                },
+                {
+                    texto: 'Ahh! Que legal, adorei.',
+                    nome: 'Nome do Usuario Logado',
+                    email: 'exemplo@gmail.com'
+                }
     		]
     	}
     ]
@@ -72,6 +86,7 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     $scope.objOpen = {
 		open: undefined,
 		id: undefined,
+        like: true,
 		img: undefined,
 		data: undefined,
 		titulo: undefined,
@@ -82,7 +97,6 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 		comentarios: [
 			{
     			texto: undefined,
-    			img: undefined,
     			nome: undefined,
     			email: undefined
     		}
@@ -90,8 +104,22 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 	}
 
 	$scope.like = function(id) {
-		
+        var object_by_id = $filter('filter')($scope.agendas, {id: id})[0];
+        if(object_by_id.like){
+            object_by_id.likes ++;
+            object_by_id.like = false;
+        }
 	}
+
+    $scope.comentar = function(objForm) {
+        objForm = {
+            texto: objForm.texto,
+            nome: 'Murilo Eduardo',
+            email: 'muriloeduardoooooo@gmail.com'
+        }
+        $scope.objOpen.comentarios.push(objForm);
+        delete $scope.comentario;
+    }
 
     $scope.openAgenda = function(agenda) {
     	if(agenda){

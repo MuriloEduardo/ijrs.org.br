@@ -1,0 +1,94 @@
+<div id="tf-counter" class="text-center gray-bg" style="padding-top:100px !important">
+  <div class="container">
+    <div class="row"> <!-- Row -->
+      <div class="counter"> 
+
+        <div class="col-xs-6 col-sm-4 col-md-2 col-md-2 col-md-offset-1 facts"><!-- counter #1 -->
+            <div ng-click="viewsBiblioteca(1)" class="count-box" ng-class="{active: viewAberta == 1}"> 
+              <i class="fa fa-book"></i>
+              <p class="small">Monografias completas</p>
+            </div> 
+          </a>
+        </div><!-- end counter #1 -->
+
+        <div class="col-xs-6 col-sm-4 col-md-2 facts"><!-- counter #2 -->
+          <div ng-click="viewsBiblioteca(2)" class="count-box" ng-class="{active: viewAberta == 2}">
+            <i class="fa fa-microphone"></i>
+            <p class="small">Entrevistas</p>
+          </div>
+        </div>
+
+      <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #3 -->
+        <div class="count-box">
+          <i class="fa fa-file-text"></i>
+          <p class="small">Resumo de monografias</p>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #4 -->
+        <div class="count-box">
+          <i class="fa fa-newspaper-o"></i>
+          <p class="small">Artigos</p>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-4 col-md-2 facts"> <!-- counter #5 -->
+        <div class="count-box last">
+          <i class="fa fa-female"></i>
+          <p class="small">Acervo Malvina Mcneill</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row vertical-align">
+          <div class="col-md-6">
+            <div class="eng-foto-redonda">
+              <img src="img/biblioteca/img01.jpg" alt="" class="img-responsive img-redonda">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h1>Monografias Completas</h1>
+            <h3>Neste espaço poderão ser consultadas as monografias dos analistas junguianos do IJRS</h3>
+            <br>
+            <a href="">
+              <h4>Confira abaixo!</h4>
+              <i class="fa fa-angle-down"></i>
+            </a>
+          </div>
+        </div>
+        <br>
+        <div ng-repeat="content in monografias" class="monografias">
+          <h3><i class="fa fa-angle-right"></i>{{content.titulo}}</h3>
+          <h4>{{content.subTitulo}}</h4>
+          <p>{{content.resumo}}</p>
+          <br>
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Link para download <i class="fa fa-cloud-download"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 2">
+  <h1>Entrevistas</h1>
+  <h3>Aqui você pode assistir algumas entrevistas dadas pelos profissionais do IJRS</h3>
+  <br><br>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 entrevistas" ng-repeat="content in entrevistas">
+      <div class="row vertical-align">
+        <div class="col-md-10">
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
