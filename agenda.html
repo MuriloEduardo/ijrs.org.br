@@ -1,0 +1,62 @@
+<div id="blog-post" class="gray-bg">
+    <div class="container">
+        <div class="row fade-in" ng-hide="objOpen.open">
+            <div class="col-md-6" ng-repeat="agenda in agendas">
+                <div class="post-wrap">
+                    <div class="media post">
+                        <div class="media-left"> 
+                            <a href="#">
+                              <img class="media-object" ng-src="{{agenda.img}}" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <p class="small">{{agenda.data}}</p>
+                            <a href="#">
+                                <h5 class="media-heading"><strong>{{agenda.titulo}}</strong></h5>
+                            </a>
+                            <p>{{agenda.resumo}}</p>
+                        </div>
+                    </div>
+                    <div class="post-meta">
+                        <ul class="list-inline metas pull-left">
+                            <li><a href="javascript:void(0)">{{agenda.comentarios.length}} Comentários</a></li>
+                            <li><a href="javascript:void(0)" ng-click="openAgenda(agenda)">Ler Mais</a></li>
+                        </ul>
+                        <ul class="list-inline meta-detail pull-right">
+                            <li><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> {{agenda.likes}}</li>
+                            <li><i class="fa fa-eye"></i> {{agenda.views}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row fade-in" ng-show="objOpen.open">
+            <div class="post-wrap">
+                <div class="media post">
+                    <div class="media-left"> 
+                        <a href="#">
+                          <img class="media-object" ng-src="{{objOpen.img}}" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p class="small">{{objOpen.data}}</p>
+                        <a href="#">
+                            <h5 class="media-heading"><strong>{{objOpen.titulo}}</strong></h5>
+                        </a>
+                        <p>{{objOpen.texto}}</p>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <ul class="list-inline metas pull-left">
+                        <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li>
+                        <li><a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar</a></li>
+                    </ul>
+                    <ul class="list-inline meta-detail pull-right">
+                        <li><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> {{objOpen.likes}}</li>
+                        <li><i class="fa fa-eye"></i> {{objOpen.views}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
