@@ -44,27 +44,6 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
     	},
 	];
 	
+	
  	
 });
-/*
-
-app.directive('disableAnimation', function($animate){
-    return {
-        restrict: 'A',
-        link: function($scope, $element, $attrs){
-            $attrs.$observe('disableAnimation', function(value){
-                $animate.enabled(!value, $element);
-            });
-        }
-    }
-});
-*/
-
-app.directive('disableAnimate', ['$animate', function ($animate) {
-    return {
-        restrict: 'A',
-        link: function (scope, element) {
-            $animate.enabled(false, element);
-        }
-    };
-} ]);
