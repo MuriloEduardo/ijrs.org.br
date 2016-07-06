@@ -5,8 +5,8 @@
                 <div class="post-wrap">
                     <div class="media post">
                         <div class="media-left"> 
-                            <a href="#">
-                              <img class="media-object" ng-src="{{agenda.img}}" alt="">
+                            <a href="javascript:void(0)" ng-click="openAgenda(agenda)" ng-if="!img">
+                              <img class="media-object" ng-src="{{agenda.img  || '//:0' }}" alt="">
                             </a>
                         </div>
                         <div class="media-body">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="post-meta">
                         <ul class="list-inline metas pull-left">
-                            <li><a href="javascript:void(0)">{{agenda.comentarios.length}} Comentários</a></li>
+                            <!-- <li><a href="javascript:void(0)">{{agenda.comentarios.length}} Comentários</a></li> -->
                             <li><a href="javascript:void(0)" ng-click="openAgenda(agenda)">Ler Mais</a></li>
                         </ul>
                         <ul class="list-inline meta-detail pull-right">
@@ -34,7 +34,7 @@
             <div class="post-wrap">
                 <div class="media post">
                     <div class="media-left"> 
-                        <a href="#">
+                        <a href="javascript:void(0)">
                           <img class="media-object" ng-src="{{objOpen.img}}" alt="">
                         </a>
                     </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="post-meta">
                     <ul class="list-inline metas pull-left">
-                        <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li>
+                        <!-- <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li> -->
                         <li><a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar para Agenda</a></li>
                     </ul>
                     <ul class="list-inline meta-detail pull-right">

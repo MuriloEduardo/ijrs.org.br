@@ -21,7 +21,14 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 		var ano = data.getFullYear();  
 		return dia+"/"+mes+"/"+ano;
 	}
+	
+	$http.get("php/agenda.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.agendas = response.data.agendas;
+		debugger
+    });
 
+   /*
     $scope.agendas = [
     	{
     		id: 1,
@@ -82,6 +89,7 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		]
     	}
     ]
+	*/
 
     $scope.objOpen = {
 		open: undefined,
