@@ -25,7 +25,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "ANITA MUSSI KLAFKE",
+    		nome: "Anita Mussi Klafke",
     		endereco: "Cel. Pedro Benedet, 505/609 - Ed. Millenium Saúde Center. Criciúma-SC",
     		fone: "(48) 34375229 (48)91469630",
     		email: "anitamk@terra.com.br",
@@ -81,7 +81,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "BENIGNA JUSSARA GANDOLFI",
+    		nome: "Benigna Jussara Gandolfi",
     		endereco: "Av. Getúlio Vargas, 1184/402",
     		fone: "(51) 32336680",
     		email: "jugandolfi@gmail.com",
