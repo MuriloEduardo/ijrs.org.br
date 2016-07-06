@@ -15,16 +15,9 @@ if ($result = $mysqli->query($sqlConteudo)) {
 			$dataAgenda[$row['id']]["data"] = "05/07/2016";
 			$dataAgenda[$row['id']]["titulo"] = $row['nome'];
 			
-			$dataAgenda[$row['id']]["resumo"] = 
-			substr(
-					strip_tags(
-								nl2br(
-									utf8_encode($row['texto'])
-									)
-								),0,100
-					)."...";
+			$dataAgenda[$row['id']]["resumo"] = substr(utf8_encode($row['texto']),0,100)."...";
 			
-			$dataAgenda[$row['id']]["texto"] = strip_tags(utf8_encode($row['texto']));
+			$dataAgenda[$row['id']]["texto"] = utf8_encode($row['texto']);
 			
 			
 			$dataAgenda[$row['id']]["likes"] = rand(10,200);;

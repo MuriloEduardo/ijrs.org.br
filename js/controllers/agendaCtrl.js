@@ -25,7 +25,6 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 	$http.get("php/agenda.php").then(function(response) {
         $scope.myData = response.data.records;
 		$scope.agendas = response.data.agendas;
-		debugger
     });
 
    /*
@@ -139,4 +138,10 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		delete $scope.objOpen;
     	}
     }
+});
+
+app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });

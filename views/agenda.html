@@ -14,7 +14,7 @@
                             <a href="#">
                                 <h5 class="media-heading"><strong>{{agenda.titulo}}</strong></h5>
                             </a>
-                            <p>{{agenda.resumo}}</p>
+                            <p ng-bind-html="agenda.resumo | unsafe"></p>
                         </div>
                     </div>
                     <div class="post-meta">
@@ -43,7 +43,7 @@
                         <a href="#">
                             <h5 class="media-heading"><strong>{{objOpen.titulo}}</strong></h5>
                         </a>
-                        <p>{{objOpen.texto}}</p>
+                        <p ng-bind-html="objOpen.texto | unsafe"></p>
                     </div>
                 </div>
                 <div class="post-meta">
@@ -84,7 +84,7 @@
                                     <h6 class="media-heading"><strong>{{comentario.email}}</strong></h6>
                                 </a>
                                 <br>
-                                <p>{{comentario.texto}}</p>
+                                <p ng-bind-html="comentario.texto | unsafe"></p>
                             </div>
                         </div>
                     </div>

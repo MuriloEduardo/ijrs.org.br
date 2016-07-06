@@ -20,6 +20,7 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
 		$scope.acervo = response.data.acervo;
 		
     });
+	
 
    /*
     $scope.monografias = [
@@ -89,4 +90,10 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
     ];
 	*/
 	
+});
+
+app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });

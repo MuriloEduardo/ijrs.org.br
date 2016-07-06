@@ -29,7 +29,7 @@ if ($result = $mysqli->query($sqlConteudo)) {
 
 
 //Resumos das Monografias - cont 41
-$sqlConteudo = "select nome as titulo, arquivo1 as link, texto as resumo  from cms_conteudo where id = 41 and status = 1";
+$sqlConteudo = "select nome as titulo, legenda as subTitulo, arquivo1 as link, texto as resumo  from cms_arquivos where conteudo = 41 and status = 1";
 $myArray = array();
 if ($result = $mysqli->query($sqlConteudo)) {
     while($row = $result->fetch_array(MYSQL_ASSOC)) {
@@ -66,7 +66,7 @@ if ($result = $mysqli->query($sqlConteudo)) {
    	$data['acervo'] = $myArray;
 }
 
-//print_r($data['resumos']);
+//print_r( $myArray);
 
 $result->close();
 $mysqli->close();
