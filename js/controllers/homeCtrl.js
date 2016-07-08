@@ -48,7 +48,9 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 =======
 >>>>>>> parent of f7f88d5... ajustes
 	
+	
  	
+<<<<<<< HEAD
 });
 /*
 
@@ -89,3 +91,6 @@ app.directive('disableAnimate', ['$animate', function ($animate) {
 =======
 } ]);
 >>>>>>> parent of f7f88d5... ajustes
+=======
+});
+>>>>>>> parent of 96352b9... ajustes
