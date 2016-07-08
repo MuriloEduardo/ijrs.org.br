@@ -66,7 +66,7 @@
         <div ng-repeat="content in monografias" class="monografias">
           <h3><i class="fa fa-angle-right"></i>{{content.titulo}}</h3>
           <h4>{{content.subTitulo}}</h4>
-          <p ng-bind-html="content.resumo | unsafe"></p>
+          <p>{{content.resumo}}</p>
           <br>
           <a href="http://ijrs.org.br/includes/_incDownload.php?arquivo={{content.link}}" class="btn btn-primary tf-btn color">Link para download <i class="fa fa-cloud-download"></i></a>
         </div>
@@ -84,10 +84,10 @@
       <div class="row vertical-align">
         <div class="col-md-10">
           <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
-          <p ng-bind-html="content.resumo | unsafe"></p>
+          <p>{{content.resumo}}</p>
         </div>
         <div class="col-md-2">
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse a Entrevista</a>
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
         </div>
       </div>
     </div>
@@ -103,8 +103,11 @@
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in resumos">
       <div class="row vertical-align">
         <div class="col-md-10">
-          <h4>{{content.titulo}}</h4>
-          <p ng-bind-html="content.resumo | unsafe"></p>
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
         </div>
       </div>
     </div>
@@ -119,8 +122,11 @@
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in artigos">
       <div class="row vertical-align">
         <div class="col-md-10">
-          <h4>{{content.titulo}}</h4>
-          <p ng-bind-html="content.resumo | unsafe"></p>
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
         </div>
       </div>
     </div>
@@ -135,10 +141,11 @@
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in acervo">
       <div class="row vertical-align">
         <div class="col-md-10">
-          <h4>{{content.titulo}}</h4>
-          <!-- <p ng-bind-html-unsafe="{{content.resumo}}"></p> -->
-          <p ng-bind-html="content.resumo | unsafe"></p>
-          <!-- <p>{{content.resumo}}</p> -->
+          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
+          <p>{{content.resumo}}</p>
+        </div>
+        <div class="col-md-2">
+          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
         </div>
       </div>
     </div>

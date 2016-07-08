@@ -9,13 +9,13 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner" role="listbox" >
-                            <div class="item hover-bg"  ng-class="{active:$first}" ng-repeat="slider in sliders">
+                            <div class="item hover-bg" ng-class="{active:$first}" ng-repeat="slider in sliders">
                                 <div class="hover-text off">
                                     <a title="" href="#/sobre">
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="(key,slider) in sliders" data-slide-to="{{key}}"></li>
+                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
                             </ol>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                         </div>
@@ -78,7 +78,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="(key,slider) in sliders" data-slide-to="{{key}}"></li>
+                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
                             </ol>
                         </div>
                     </div>
@@ -140,11 +140,11 @@
                 <div class="box">
                     <div class="hover-bg">
                         <div class="hover-text off">
-                            <a title="Mobile Application" href="img/ijrs/psicologiaanalitica.jpg" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/ijrs/psicologiaanalitica.jpg">
+                            <a title="Mobile Application" href="img/ijrs/psicologia.jpg" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/ijrs/psicologia.jpg">
                                 <i class="fa fa-expand"></i>
                             </a>
                         </div>
-                        <img src="img/ijrs/psicologiaanalitica.jpg" class="img-" alt="Image" width="100%"> <!-- Portfolio Image -->
+                        <img src="img/ijrs/psicologia.jpg" class="img-" alt="Image" width="100%"> <!-- Portfolio Image -->
                     </div>
                 </div>
                 <div class="abaixo-box">
@@ -290,7 +290,7 @@
                     </h2>
                 </div>
                 <div class="mapa-right">
-                    <img src="img/map.jpg" alt="" class="img-responsive">
+                    <div id="googleMap" style="width:500px;height:380px;"></div>
                 </div>
             </div>
         </div>

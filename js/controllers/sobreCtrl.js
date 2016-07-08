@@ -6,6 +6,15 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
         $location.path(route);
     }
 	
+	var dadosForm
+	$http.post('php/dados.php', dadosForm).success(function(data, status){
+
+     // Angular
+     $scope.array.push(data);
+
+	})
+
+    /*
 	$scope.analistas = [
     	{
     		img: "",
@@ -25,7 +34,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "Anita Mussi Klafke",
+    		nome: "ANITA MUSSI KLAFKE",
     		endereco: "Cel. Pedro Benedet, 505/609 - Ed. Millenium Saúde Center. Criciúma-SC",
     		fone: "(48) 34375229 (48)91469630",
     		email: "anitamk@terra.com.br",
@@ -81,7 +90,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "Benigna Jussara Gandolfi",
+    		nome: "BENIGNA JUSSARA GANDOLFI",
     		endereco: "Av. Getúlio Vargas, 1184/402",
     		fone: "(51) 32336680",
     		email: "jugandolfi@gmail.com",
@@ -144,7 +153,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		sex: "f"
     	}
     ];
-
+	*/
     $scope.diretores = [
     	{
     		img: "",

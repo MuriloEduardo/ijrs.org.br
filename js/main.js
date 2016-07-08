@@ -70,8 +70,7 @@ function main() {
     /*====================================
     Portfolio Carousel 
     ======================================*/
-  	/*
-	$(document).ready(function() {
+  	$(document).ready(function() {
   	  var owl = $("#team");
   	  owl.owlCarousel({
   	     
@@ -88,7 +87,6 @@ function main() {
   	  });
   	 
   	});
-	*/
 
     /*====================================
     Portfolio Isotope Filter
@@ -135,7 +133,6 @@ function main() {
 
     $(document).ready(function() {
  
-  /*
   $("#owl-demo").owlCarousel({
  
       navigation : false, // Show next and prev buttons
@@ -151,7 +148,6 @@ function main() {
       // itemsMobile : false
  
   });
-  */
  
 });
 
