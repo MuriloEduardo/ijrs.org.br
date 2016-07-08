@@ -28,8 +28,36 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 			texto: '"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."',
     	}
 	];
+<<<<<<< HEAD
 
 	$('.carousel').carousel({
       interval: 5000
     });
 });
+=======
+	
+ 	
+});
+/*
+
+app.directive('disableAnimation', function($animate){
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attrs){
+            $attrs.$observe('disableAnimation', function(value){
+                $animate.enabled(!value, $element);
+            });
+        }
+    }
+});
+*/
+
+app.directive('disableAnimate', ['$animate', function ($animate) {
+    return {
+        restrict: 'A',
+        link: function (scope, element) {
+            $animate.enabled(false, element);
+        }
+    };
+} ]);
+>>>>>>> parent of f7f88d5... ajustes
