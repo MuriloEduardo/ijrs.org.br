@@ -1,15 +1,14 @@
 <?php
 header("Content-Type: text/html; charset=UTF-8",true);
-$base = "ijrs12";
 
-if($_SERVER['SERVER_PORT'] == 8888){
-	$host = "localhost";
-	$user = "root";
-	$senha = "root";
-} else {
-	$host = "mysql03.ijrs.org.br";
-	$user = "ijrs12";
-	$senha = "my6210ij12";
-}
+define('MYSQL_BOTH',MYSQLI_BOTH);
+define('MYSQL_NUM',MYSQLI_NUM);
+define('MYSQL_ASSOC',MYSQLI_ASSOC);
+
+$base = "ijrs12";
+$host = "localhost";
+$user = "root";
+$senha = "";
+
 $mysqli = new mysqli($host, $user, $senha, $base);
 ?>

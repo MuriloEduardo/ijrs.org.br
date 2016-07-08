@@ -290,7 +290,7 @@ a.goto-btn:hover {
     text-indent: -999px;
     cursor: pointer;
     background-color: #cfcfcf;
-    border: 2px solid #cfcfcf;
+    border: 2px solid #FFCC33;
     border-radius: 10px;
 }
 .carousel-indicators li:hover{
