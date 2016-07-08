@@ -31,12 +31,15 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	$('.carousel').carousel({
       interval: 5000
     });
 });
 =======
+=======
+>>>>>>> parent of f7f88d5... ajustes
 =======
 >>>>>>> parent of f7f88d5... ajustes
 =======
@@ -67,6 +70,10 @@ app.directive('disableAnimate', ['$animate', function ($animate) {
     };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+} ]);
+>>>>>>> parent of f7f88d5... ajustes
+=======
 } ]);
 >>>>>>> parent of f7f88d5... ajustes
 =======
