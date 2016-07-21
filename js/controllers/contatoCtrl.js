@@ -8,55 +8,21 @@ app.controller("contatoCtrl", function ($rootScope, $route, $scope, $http, $loca
         $location.path(route);
     }
 	
-	
-
-    $scope.enviarMensagem = function(dados){
-    	if(dados && !$('form#contact-form').hasClass('ng-invalid-required')){
-    		
-			
-			
-			/*
-			$http.post('php/ajax.php', {"name": dados.name, "email": dados.email, "phone": dados.phone, "message": dados.message, "tipo": "contato"}).
-                        success(function(data, status) {
-                            console.log(data);
-                            $scope.status = status;
-                            $scope.data = data;
-                            $scope.result = data; 
-							
-							debugger
-							
-                        })
-	
-			console.log(dados);
-    		$scope.sucesso = true;
-			*/
-			
-			var dataObj = {
-				name : dados.name,
-				email : dados.email,
-				phone: dados.phone,
-				message: dados.message,
-				tipo : 'contato'
-			};	
-			var res = $http.post('php/ajax.php', dataObj);
-			res.success(function(data, status, headers, config) {
-				debugger
-				//$scope.message = data;
-				//$scope.true = true;
-				if(data == 'success') { $scope.sucesso = true; } else { $scope.sucesso = false; }
+    $scope.enviarMensagem = function(dados, valid){
+    	dados.tipo = "contato";
+		if(valid){
+			$http.post('php/ajax.php', dados).success(function(data, status) {
 				
-			});
-			res.error(function(data, status, headers, config) {
-				$scope.sucesso = false;
-				//alert( "failure message: " + JSON.stringify({data: data}));
-				//$scope.sucesso = false;
-				
-			});
-			
-			//$scope.sucesso = true;
-
-
-
+                console.log(data);
+                if(data == 'success'){
+                    $scope.sucesso = true;
+                }else{
+                    $scope.sucesso = false;
+					$scope.resContato = {msg: 'Falha no cadastro, favor tente novamente.'};
+                }
+            });
     	}
     }
+	
+	
 });

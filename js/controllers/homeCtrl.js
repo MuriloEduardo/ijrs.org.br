@@ -29,34 +29,17 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
     	}
 	];
 	
-	$scope.gravar = function(dados){
-    	if(dados && !$('form#cadastro-form').hasClass('ng-invalid-required')){
-    					
-					
-			var dataObj = {
-				name : dados.name,
-				email : dados.email,
-				tipo : 'cadastro'
-			};	
-			var res = $http.post('php/ajax.php', dataObj);
-			res.success(function(data, status, headers, config) {
-				debugger
-				//$scope.message = data;
-				//$scope.true = true;
-				if(data == 'success') { $scope.sucesso = true; } else { $scope.sucesso = false; }
-				
-			});
-			res.error(function(data, status, headers, config) {
-				$scope.sucesso = false;
-				//alert( "failure message: " + JSON.stringify({data: data}));
-				//$scope.sucesso = false;
-				
-			});
-	
-			console.log(dados);
-			//$scope.sucesso = true;
-    		
-    	}
+	$scope.cadastraNewsletter = function(news, valid) {
+		news.tipo = "cadastro";
+    	if(!valid) return false;
+    	$http.post('php/ajax.php', news).success(function(res){
+    		console.log(res)
+    		if(res == 'success'){
+    			$scope.resNews = {msg: 'Cadastro efetuado com sucesso, obrigado!'};
+    		}else{
+    			$scope.resNews = {msg: 'Falha no cadastro, favor tente novamente.'};//{msg: 'Este email já está cadastrado.'};
+    		}
+    	});
     }
 
 	$('.carousel').carousel({

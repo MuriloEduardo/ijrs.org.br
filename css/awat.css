@@ -6,3 +6,5 @@
 .team-detail  h3 {
     min-height: 60px;
 }
+
+.meta-detail, .comments{ display:none;}

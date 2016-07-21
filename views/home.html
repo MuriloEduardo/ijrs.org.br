@@ -257,27 +257,30 @@
             <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
 
 
-<form id="cadastro-form" class="form" name="sentMessage" novalidate> <!-- form wrapper -->
-                    
+<form id="contact-form" class="form" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
+                    <div class="row fade-in" ng-show="resNews">
+                        <div class="col-md-12">
+                            <p class="resNews">{{resNews.msg}}</p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your name input -->
-                                <input type="text" autocomplete="off" class="form-control" ng-model="cadastro.name" placeholder="Seu nome *" id="name" required data-validation-required-message="Por favor coloque seu nome.">
+                                <input type="text" ng-model="news.nome" autocomplete="off" class="form-control" placeholder="Seu nome *" id="name" ng-class="{invalido: sentMessage.$invalid && send}" required data-validation-required-message="Por favor coloque seu nome.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="email" autocomplete="off" class="form-control" ng-model="cadastro.email" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
+                                <input type="email" ng-model="news.email" ng-class="{invalido: sentMessage.$invalid && send}" autocomplete="off" class="form-control" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
                                 <p class="help-block text-danger"></p>
-                                
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary tf-btn color" ng-click="gravar(cadastro)">Assinar</button> <!-- Send button -->
+                            <button type="submit" ng-click="send=true" class="btn btn-primary tf-btn color">Assinar</button> <!-- Send button -->
                         </div>
                     </div>
                 </form><!-- end form wrapper -->
