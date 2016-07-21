@@ -7,24 +7,17 @@ app.controller("contatoCtrl", function ($rootScope, $route, $scope, $http, $loca
     $scope.go = function (route) {
         $location.path(route);
     }
-	
-	
 
-    $scope.enviarMensagem = function(dados){
-    	if(dados && !$('form#contact-form').hasClass('ng-invalid-required')){
-    		
-			debugger
-			
-			$http.post($scope.url, {"name": dados.name, "email": dados.email, "phone": dados.phone, "message": dados.message}).
-                        success(function(data, status) {
-                            console.log(data);
-                            $scope.status = status;
-                            $scope.data = data;
-                            $scope.result = data; 
-                        })
-	
-			console.log(dados);
-    		$scope.sucesso = true;
+    $scope.enviarMensagem = function(dados, valid){
+    	if(valid){
+			$http.post('php/contato.php', dados).success(function(data, status) {
+                console.log(data);
+                if(data == '1'){
+                    $scope.sucesso = true;
+                }else{
+                    $scope.sucesso = false;
+                }
+            });
     	}
     }
 });

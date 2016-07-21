@@ -15,6 +15,18 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
     $scope.go = function (route) {
         $location.path(route);
     }
+
+    $scope.cadastraNewsletter = function(news, valid) {
+    	if(!valid) return false;
+    	$http.post('php/cadastra_newsletter.php', news).success(function(res){
+    		console.log(res)
+    		if(res == '1'){
+    			$scope.resNews = {msg: 'Cadastro efetuado com sucesso!'};
+    		}else{
+    			$scope.resNews = {msg: 'Este email já está cadastrado.'};
+    		}
+    	});
+    }
 	
 	$http.get("php/home.php").then(function(response) {
         $scope.myData = response.data.records;

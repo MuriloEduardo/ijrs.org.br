@@ -15,9 +15,12 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
+                          <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -32,16 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 text-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12 text-center">
+                <div class="col-md-6 col-md-offset-6 col-xs-12 text-center">
                     <div class="row cadastro-contro-txt">
                         <div class="col-sm-6 col-md-6 col-xs-6">
                             <a href="javascript:void(0)" ng-click="newsleter('#newsletter')" class="scroll goto-btn text-uppercase">Cadastre-se</a>
@@ -66,20 +60,20 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
+                          <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel-mobile" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
-                            </ol>
                         </div>
                     </div>
                 </div>
@@ -259,19 +253,23 @@
                         newsletter Ijrs
                     </h2>
                 </div>
-                <form id="contact-form" class="form" name="sentMessage" novalidate> <!-- form wrapper -->
-                    
+                <form id="contact-form" class="form" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
+                    <div class="row fade-in" ng-show="resNews">
+                        <div class="col-md-12">
+                            <p class="resNews">{{resNews.msg}}</p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your name input -->
-                                <input type="text" id="emailNews" autocomplete="off" class="form-control" placeholder="Seu nome *" id="name" required data-validation-required-message="Por favor coloque seu nome.">
+                                <input type="text" id="emailNews" ng-model="news.nome" autocomplete="off" class="form-control" placeholder="Seu nome *" id="name" required data-validation-required-message="Por favor coloque seu nome.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="email" autocomplete="off" class="form-control" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
+                                <input type="email" ng-model="news.email" autocomplete="off" class="form-control" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -290,7 +288,7 @@
                     </h2>
                 </div>
                 <div class="mapa-right">
-                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                    <img src="img/map.jpg" alt="" class="img-responsive">
                 </div>
             </div>
         </div>
