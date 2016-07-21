@@ -21,7 +21,13 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 		var ano = data.getFullYear();  
 		return dia+"/"+mes+"/"+ano;
 	}
+	
+	$http.get("php/agenda.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.agendas = response.data.agendas;
+    });
 
+   /*
     $scope.agendas = [
     	{
     		id: 1,
@@ -82,6 +88,7 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		]
     	}
     ]
+	*/
 
     $scope.objOpen = {
 		open: undefined,
@@ -131,4 +138,10 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		delete $scope.objOpen;
     	}
     }
+});
+
+app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });

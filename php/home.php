@@ -1,4 +1,4 @@
-<?php
+<? 
 include "conn.php";
 //utlimas atualizacoe
 $sqlLastATT = "select * from cms_conteudo where status =  1 and mostraHome = 1 order by ordem asc,id desc limit 4";
@@ -11,7 +11,7 @@ $myArray = array();
 if ($result = $mysqli->query($sqlLastATT)) {
 
     while($row = $result->fetch_array(MYSQL_ASSOC)) {
-        $myArray[] = array_map( 'utf8_encode' , $row );
+            $myArray[] = array_map( 'utf8_encode' , $row );
     }
    	$data['sliders'] = $myArray;
 }
@@ -29,4 +29,3 @@ $result->close();
 $mysqli->close();
 
 echo json_encode($data);
-?>

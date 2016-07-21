@@ -1626,10 +1626,3 @@ a.dif{
     position: relative;
     top: 4px;
 }
-.resNews{
-    font-size: 12px;
-    font-weight: bold;
-}
-input.invalido,textarea.invalido{
-    border-color: #ffcc33;
-}

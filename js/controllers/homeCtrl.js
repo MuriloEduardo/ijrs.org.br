@@ -15,18 +15,6 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
     $scope.go = function (route) {
         $location.path(route);
     }
-
-    $scope.cadastraNewsletter = function(news, valid) {
-    	if(!valid) return false;
-    	$http.post('php/cadastra_newsletter.php', news).success(function(res){
-    		console.log(res)
-    		if(res == '1'){
-    			$scope.resNews = {msg: 'Cadastro efetuado com sucesso!'};
-    		}else{
-    			$scope.resNews = {msg: 'Este email já está cadastrado.'};
-    		}
-    	});
-    }
 	
 	$http.get("php/home.php").then(function(response) {
         $scope.myData = response.data.records;
@@ -40,8 +28,62 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 			texto: '"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."',
     	}
 	];
+	
+	$scope.gravar = function(dados){
+    	if(dados && !$('form#cadastro-form').hasClass('ng-invalid-required')){
+    					
+					
+			var dataObj = {
+				name : dados.name,
+				email : dados.email,
+				tipo : 'cadastro'
+			};	
+			var res = $http.post('php/ajax.php', dataObj);
+			res.success(function(data, status, headers, config) {
+				debugger
+				//$scope.message = data;
+				//$scope.true = true;
+				if(data == 'success') { $scope.sucesso = true; } else { $scope.sucesso = false; }
+				
+			});
+			res.error(function(data, status, headers, config) {
+				$scope.sucesso = false;
+				//alert( "failure message: " + JSON.stringify({data: data}));
+				//$scope.sucesso = false;
+				
+			});
+	
+			console.log(dados);
+			//$scope.sucesso = true;
+    		
+    	}
+    }
 
 	$('.carousel').carousel({
       interval: 5000
     });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
 });

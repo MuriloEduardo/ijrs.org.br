@@ -15,7 +15,7 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                           <ol class="carousel-indicators">
@@ -60,7 +60,7 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                           <div class="row">
@@ -134,11 +134,11 @@
                 <div class="box">
                     <div class="hover-bg">
                         <div class="hover-text off">
-                            <a title="Mobile Application" href="img/ijrs/psicologia.jpg" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/ijrs/psicologia.jpg">
+                            <a title="Mobile Application" href="img/ijrs/psicologiaanalitica.jpg" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/ijrs/psicologiaanalitica.jpg">
                                 <i class="fa fa-expand"></i>
                             </a>
                         </div>
-                        <img src="img/ijrs/psicologia.jpg" class="img-" alt="Image" width="100%"> <!-- Portfolio Image -->
+                        <img src="img/ijrs/psicologiaanalitica.jpg" class="img-" alt="Image" width="100%"> <!-- Portfolio Image -->
                     </div>
                 </div>
                 <div class="abaixo-box">
@@ -253,33 +253,47 @@
                         newsletter Ijrs
                     </h2>
                 </div>
-                <form id="contact-form" class="form" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
-                    <div class="row fade-in" ng-show="resNews">
-                        <div class="col-md-12">
-                            <p class="resNews">{{resNews.msg}}</p>
-                        </div>
-                    </div>
+                       <div ng-hide="sucesso" class="row text-center fade-in"> <!-- contact form outer row with centered text-->
+            <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
+
+
+<form id="cadastro-form" class="form" name="sentMessage" novalidate> <!-- form wrapper -->
+                    
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your name input -->
-                                <input type="text" id="emailNews" ng-model="news.nome" autocomplete="off" class="form-control" placeholder="Seu nome *" id="name" ng-class="{invalido: sentMessage.$invalid && send}" required data-validation-required-message="Por favor coloque seu nome.">
+                                <input type="text" autocomplete="off" class="form-control" ng-model="cadastro.name" placeholder="Seu nome *" id="name" required data-validation-required-message="Por favor coloque seu nome.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="email" ng-model="news.email" ng-class="{invalido: sentMessage.$invalid && send}" autocomplete="off" class="form-control" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
+                                <input type="email" autocomplete="off" class="form-control" ng-model="cadastro.email" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
                                 <p class="help-block text-danger"></p>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" ng-click="send=true" class="btn btn-primary tf-btn color">Assinar</button> <!-- Send button -->
+                            <button type="submit" class="btn btn-primary tf-btn color" ng-click="gravar(cadastro)">Assinar</button> <!-- Send button -->
                         </div>
                     </div>
                 </form><!-- end form wrapper -->
+                
+                            </div><!-- end col 10 with offset 1 to centered -->
+        </div> <!-- end contact form outer row with centered text-->
+
+
+                <div ng-show="sucesso" class="row text-center fade-in successCadastro">
+            <div>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <div>
+                <p>Cadastro efetuado com sucesso, obrigado!</p>
+            </div>
+        </div>
 
                 <div class="section-header">
                     <h2>
