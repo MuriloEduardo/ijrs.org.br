@@ -40,7 +40,7 @@
                         <!-- Input your name -->
                         <div class="col-md-4">
                             <div class="form-group"> <!-- Your name input -->
-                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.nome" placeholder="Seu nome *" id="name" required data-validation-required-message="Preencha seu nome.">
+                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.nome" placeholder="Seu nome *" id="name" required data-validation-required-message="Preencha seu nome." ng-class="{invalido: sentMessage.$invalid && send}">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <!-- Input your email -->
                         <div class="col-md-4">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="email" autocomplete="off" class="form-control" ng-model="contato.email" placeholder="Seu email *" id="email" required data-validation-required-message="Preencha seu email.">
+                                <input type="email" autocomplete="off" class="form-control" ng-model="contato.email" placeholder="Seu email *" id="email" required data-validation-required-message="Preencha seu email." ng-class="{invalido: sentMessage.$invalid && send}">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                         <!-- Input your Phone no. -->
                         <div class="col-md-4">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.telefone" placeholder="Seu telofone *" id="phone" required data-validation-required-message="Preencha seu telefone">
+                                <input type="text" autocomplete="off" class="form-control" ng-model="contato.telefone" placeholder="Seu telofone *" id="phone" required data-validation-required-message="Preencha seu telefone" ng-class="{invalido: sentMessage.$invalid && send}">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -65,13 +65,13 @@
 
                     <!-- Message Text area -->
                     <div class="form-group"> <!-- Your email input -->
-                        <textarea class="form-control" rows="7" placeholder="Sua mensagem ..." id="message" ng-model="contato.mensagem" required data-validation-required-message="Preencha a mensagem"></textarea>
+                        <textarea class="form-control" rows="7" placeholder="Sua mensagem ..." id="message" ng-model="contato.mensagem" required data-validation-required-message="Preencha a mensagem" ng-class="{invalido: sentMessage.$invalid && send}"></textarea>
                         <p class="help-block text-danger"></p>
                         <div id="success"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary tf-btn color" ng-click="enviarMensagem(contato, sentMessage.$valid)">Enviar mensagem</button> <!-- Send button -->
+                            <button type="submit" class="btn btn-primary tf-btn color" ng-click="enviarMensagem(contato, sentMessage.$valid);send=true">Enviar mensagem</button> <!-- Send button -->
                         </div>
                     </div>
 
