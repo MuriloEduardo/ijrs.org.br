@@ -6,7 +6,7 @@
             <div class="row vertical-align">
                 <div class="col-md-6 col-xs-12 text-center">
                     <div class="ipad-wrapper">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" disable-animate>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner" role="listbox" >
                             <div class="item hover-bg" ng-class="{active:$first}" ng-repeat="slider in sliders">
@@ -15,9 +15,12 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
+                          <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -32,16 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 text-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12 text-center">
+                <div class="col-md-6 col-md-offset-6 col-xs-12 text-center">
                     <div class="row cadastro-contro-txt">
                         <div class="col-sm-6 col-md-6 col-xs-6">
                             <a href="javascript:void(0)" ng-click="newsleter('#newsletter')" class="scroll goto-btn text-uppercase">Cadastre-se</a>
@@ -66,20 +60,20 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
+                          <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel-mobile" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" ng-class="{active:$first}" ng-repeat="slider in sliders" data-slide-to="{{$index}}"></li>
-                            </ol>
                         </div>
                     </div>
                 </div>
@@ -259,28 +253,30 @@
                         newsletter Ijrs
                     </h2>
                 </div>
-               <!-- <form id="contact-form" name="sentMessage" >  form wrapper -->
-				<form action="//ijrs.us13.list-manage.com/subscribe/post?u=1e80cb8175c6698c9f46d3ca9&amp;id=5a56e485ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
+                <form id="contact-form" class="form" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
+                    <div class="row fade-in" ng-show="resNews">
+                        <div class="col-md-12">
+                            <p class="resNews">{{resNews.msg}}</p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your name input -->
-                                <input type="text" name="FNAME" id="mce-FNAME"  class="form-control" placeholder="Seu nome *"  required data-validation-required-message="Por favor coloque seu nome.">
-                                <!-- <input type="text" value="" name="FNAME" id="mce-FNAME"> -->
+                                <input type="text" id="emailNews" ng-model="news.nome" autocomplete="off" class="form-control" placeholder="Seu nome *" id="name" ng-class="{invalido: sentMessage.$invalid && send}" required data-validation-required-message="Por favor coloque seu nome.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group"> <!-- Your email input -->
-                                <input type="email" id="mce-EMAIL" name="EMAIL" autocomplete="off" class="form-control" placeholder="Seu Email *"  required data-validation-required-message="Por favor coloque seu email.">
-                                <!-- <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"> -->
+                                <input type="email" ng-model="news.email" ng-class="{invalido: sentMessage.$invalid && send}" autocomplete="off" class="form-control" placeholder="Seu Email *" id="email" required data-validation-required-message="Por favor coloque seu email.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary tf-btn color">Assinar</button> <!-- Send button -->
+                            <button type="submit" ng-click="send=true" class="btn btn-primary tf-btn color">Assinar</button> <!-- Send button -->
                         </div>
                     </div>
                 </form><!-- end form wrapper -->
@@ -292,7 +288,7 @@
                     </h2>
                 </div>
                 <div class="mapa-right">
-                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                    <img src="img/map.jpg" alt="" class="img-responsive">
                 </div>
             </div>
         </div>

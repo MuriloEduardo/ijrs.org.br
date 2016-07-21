@@ -279,7 +279,6 @@ a.goto-btn:hover {
 }
 .cadastro-contro-txt{
     width:100%;
-    padding-top:22.5px;
     padding-bottom:22.5px;
 }
 .carousel-indicators .active {
@@ -1545,7 +1544,7 @@ a.dif{
     margin-right:10px;
 }
 .ipad-wrapper{
-    margin:10px;   
+    margin: 65px 10px 0px 10px;
 }
 .cada-album{
     cursor:pointer;
@@ -1626,4 +1625,11 @@ a.dif{
     margin-right: 15px;
     position: relative;
     top: 4px;
+}
+.resNews{
+    font-size: 12px;
+    font-weight: bold;
+}
+input.invalido,textarea.invalido{
+    border-color: #ffcc33;
 }

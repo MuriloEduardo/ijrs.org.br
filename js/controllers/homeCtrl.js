@@ -15,6 +15,18 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
     $scope.go = function (route) {
         $location.path(route);
     }
+
+    $scope.cadastraNewsletter = function(news, valid) {
+    	if(!valid) return false;
+    	$http.post('php/cadastra_newsletter.php', news).success(function(res){
+    		console.log(res)
+    		if(res == '1'){
+    			$scope.resNews = {msg: 'Cadastro efetuado com sucesso!'};
+    		}else{
+    			$scope.resNews = {msg: 'Este email já está cadastrado.'};
+    		}
+    	});
+    }
 	
 	$http.get("php/home.php").then(function(response) {
         $scope.myData = response.data.records;
@@ -28,75 +40,8 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 			texto: '"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."',
     	}
 	];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	$('.carousel').carousel({
       interval: 5000
     });
 });
-=======
-=======
->>>>>>> parent of f7f88d5... ajustes
-=======
->>>>>>> parent of f7f88d5... ajustes
-=======
->>>>>>> parent of f7f88d5... ajustes
-=======
->>>>>>> parent of f7f88d5... ajustes
-	
- 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of f7f88d5... ajustes
-});
-/*
-
-app.directive('disableAnimation', function($animate){
-    return {
-        restrict: 'A',
-        link: function($scope, $element, $attrs){
-            $attrs.$observe('disableAnimation', function(value){
-                $animate.enabled(!value, $element);
-            });
-        }
-    }
-});
-*/
-
-app.directive('disableAnimate', ['$animate', function ($animate) {
-    return {
-        restrict: 'A',
-        link: function (scope, element) {
-            $animate.enabled(false, element);
-        }
-    };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-} ]);
->>>>>>> parent of f7f88d5... ajustes
-=======
-} ]);
->>>>>>> parent of f7f88d5... ajustes
-=======
-} ]);
->>>>>>> parent of f7f88d5... ajustes
-=======
-} ]);
->>>>>>> parent of f7f88d5... ajustes
-=======
-} ]);
->>>>>>> parent of f7f88d5... ajustes
-=======
-});
->>>>>>> parent of 96352b9... ajustes
-=======
-} ]);
->>>>>>> parent of f7f88d5... ajustes
