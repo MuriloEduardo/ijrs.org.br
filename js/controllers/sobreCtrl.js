@@ -6,6 +6,17 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
         $location.path(route);
     }
 	
+	/*
+	$http.get("php/sobre.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.profissionais = response.data.profissionais;
+		//$scope.analistas = response.data.analistas;
+		//$scope.diretores = response.data.diretores;
+		//$scope.departamentos = response.data.departamentos;
+		
+    });
+	*/
+	
 	$scope.analistas = [
     	{
     		img: "",
@@ -426,7 +437,8 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		colaboradoras: ""
     	}
     ];
-    $scope.profissionais = [
+
+	$scope.profissionais = [
     	{
     		nome: "Adriana S.Ferreira",
     		sobre: "Psicologa, analista Junguiana pela AJB, Mestre em Artes Visuais pela UNICAMP-SP, doutoranda em Multimeios( SONHOS E CINEMA) pela UNICAMP- SP. Estudiosa da vida do CORPO em Jung e  com Stanley Keleman(Anatomia Emocional e outros...) em Berkley-CA-USA.Clinica em São Paulo, e realiza seu trabalho SONHOS E O CORPO em vários lugares do Brasil, ampliando as conexões PSIQUE-CORPO-TOTALIDADE.",
@@ -630,5 +642,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		fone: "(54)302147-57, (54)9176-9444",
     		email: "vanicejk@gmail.com"
     	}
+		
     ];
+	
 });

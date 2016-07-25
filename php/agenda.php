@@ -12,7 +12,7 @@ if ($result = $mysqli->query($sqlConteudo)) {
 			$dataAgenda[$row['id']]["open"] = "false";
 			$dataAgenda[$row['id']]["like"] = "true";
 			if($row['arquivo1']){ $dataAgenda[$row['id']]["img"] = "../upload/th_".$row['arquivo1']; } else { $dataAgenda[$row['id']]["img"] = ""; } 
-			$dataAgenda[$row['id']]["data"] = "05/07/2016";
+			$dataAgenda[$row['id']]["data"] = date("d/m/Y",strtotime($row['data']));
 			$dataAgenda[$row['id']]["titulo"] = $row['nome'];
 			
 			$dataAgenda[$row['id']]["resumo"] = substr(utf8_encode($row['texto']),0,100)."...";
