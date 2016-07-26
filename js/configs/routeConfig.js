@@ -12,6 +12,10 @@ app.config(function ($routeProvider, $locationProvider) {
 		templateUrl: "views/sobre.html",
 		controller: "sobreCtrl"
 	})
+	.when("/sobre/:id", {
+		templateUrl: "views/sobre.html",
+		controller: "sobreCtrl"
+	})
 
 	// Atividades
 	.when("/atividades", {
@@ -44,6 +48,10 @@ app.config(function ($routeProvider, $locationProvider) {
 
 	// Fotos
 	.when("/fotos", {
+		templateUrl: "views/fotos.html",
+		controller: "fotosCtrl"
+	})
+	.when("/fotos/:id", {
 		templateUrl: "views/fotos.html",
 		controller: "fotosCtrl"
 	})

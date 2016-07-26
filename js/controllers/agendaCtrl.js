@@ -65,8 +65,8 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     $scope.comentar = function(objForm) {
         objForm = {
             texto: objForm.texto,
-            nome: 'Murilo Eduardo',
-            email: 'muriloeduardoooooo@gmail.com'
+            nome: 'Luciano Luconi',
+            email: 'lucianoluconi@gmail.com'
         }
         $scope.objOpen.comentarios.push(objForm);
         delete $scope.comentario;

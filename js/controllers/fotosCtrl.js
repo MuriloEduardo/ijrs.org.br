@@ -1,4 +1,4 @@
-app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $location) {
+app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $location, $filter, $routeParams) {
 	
     $rootScope.activetab = $location.path();
 
@@ -7,8 +7,7 @@ app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $locati
     }
 
     $scope.openAlbum = function(id){
-    	$scope.AlbumAberto = id;
-
+		$scope.AlbumAberto = id;
     }
 	
 	
@@ -16,6 +15,11 @@ app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $locati
         $scope.myData = response.data.records;
 		$scope.albuns = response.data.albuns;
 		$scope.fotos = response.data.fotos;
+		
+		if($routeParams.id){
+            $scope.openAlbum($routeParams.id);
+        }
+
 		
     });
 		

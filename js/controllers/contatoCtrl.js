@@ -7,19 +7,6 @@ app.controller("contatoCtrl", function ($rootScope, $route, $scope, $http, $loca
     $scope.go = function (route) {
         $location.path(route);
     }
-
-    $scope.enviarMensagem = function(dados, valid){
-    	if(valid){
-			$http.post('php/contato.php', dados).success(function(data, status) {
-                console.log(data);
-                if(data == '1'){
-                    $scope.sucesso = true;
-                }else{
-                    $scope.sucesso = false;
-                }
-            });
-        }
-    }
 	
     $scope.enviarMensagem = function(dados, valid){
     	dados.tipo = "contato";
@@ -36,4 +23,6 @@ app.controller("contatoCtrl", function ($rootScope, $route, $scope, $http, $loca
             });
     	}
     }
+	
+	
 });

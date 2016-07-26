@@ -1,4 +1,4 @@
-<?php
+<? 
 include "conn.php";
 
 $sqlConteudo = "select * from cms_conteudo where status = 1 and categorias = 17 order by ordem,id";
@@ -35,8 +35,32 @@ if ($result = $mysqli->query($sqlConteudo)) {
    	$data['agendas'] = $myArray;
 }
 
+//print_r($dataAgenda);
+
 $result->close();
 $mysqli->close();
 
+
+/*
+$dataAgenda = array();
+$dataAgenda["id"] = "1";
+$dataAgenda["open"] = "false";
+$dataAgenda["like"] = "true";
+$dataAgenda["img"] = "img/blog/b02.jpg";
+$dataAgenda["data"] = "05/07/2016";
+$dataAgenda["titulo"] = "Tempor vestibulum turpis id ligula mi mattis.";
+$dataAgenda["resumo"] = "Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus";
+$dataAgenda["texto"] = "Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus";
+$dataAgenda["likes"] = "10";
+$dataAgenda["views"] = "234";
+$dataAgenda["comentarios"] = array();
+$dataAgenda["comentarios"][0]["texto"] = "Ahh! Que legal, adorei.";
+$dataAgenda["comentarios"][0]["nome"] = "Nome do Usuario Logado";
+$dataAgenda["comentarios"][0]["email"] = "exemplo@gmail.com";	
+
+
+*/
+//$data['agendas'][] = $dataAgenda;
+//echo $agendas;
+
 echo json_encode($data);
-?>

@@ -1,10 +1,15 @@
-app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $location) {
+app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $location, $filter, $routeParams) {
 	
 	$rootScope.activetab = $location.path();
 
 	$scope.go = function (route) {
         $location.path(route);
     }
+	
+	if($routeParams.id){
+		$('#fa' + $routeParams.id).trigger('click')
+	}
+		
 	
 	/*
 	$http.get("php/sobre.php").then(function(response) {
@@ -172,7 +177,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
         },
         {
             img: "",
-            nome: "Kátia Adriane Rodrigues Ferreira",
+            nome: "Kátia A Rodrigues Ferreira",
             endereco: "Gravataí",
             fone: "(51) 30479777 e (51) 99913003",
             email: "katia.isabel51@gmail.com",
