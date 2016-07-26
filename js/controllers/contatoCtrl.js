@@ -18,6 +18,22 @@ app.controller("contatoCtrl", function ($rootScope, $route, $scope, $http, $loca
                     $scope.sucesso = false;
                 }
             });
+        }
+    }
+	
+    $scope.enviarMensagem = function(dados, valid){
+    	dados.tipo = "contato";
+		if(valid){
+			$http.post('php/ajax.php', dados).success(function(data, status) {
+				
+                console.log(data);
+                if(data == 'success'){
+                    $scope.sucesso = true;
+                }else{
+                    $scope.sucesso = false;
+					$scope.resContato = {msg: 'Falha no cadastro, favor tente novamente.'};
+                }
+            });
     	}
     }
 });

@@ -66,7 +66,7 @@
         <div ng-repeat="content in monografias" class="monografias">
           <h3><i class="fa fa-angle-right"></i>{{content.titulo}}</h3>
           <h4>{{content.subTitulo}}</h4>
-          <p>{{content.resumo}}</p>
+          <p ng-bind-html="content.resumo | unsafe"></p>
           <br>
           <a href="http://ijrs.org.br/includes/_incDownload.php?arquivo={{content.link}}" class="btn btn-primary tf-btn color">Link para download <i class="fa fa-cloud-download"></i></a>
         </div>
@@ -82,12 +82,12 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 entrevistas" ng-repeat="content in entrevistas">
       <div class="row vertical-align">
-        <div class="col-md-10">
+        <div class="col-md-9">
           <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
-          <p>{{content.resumo}}</p>
+          <p ng-bind-html="content.resumo | unsafe"></p>
         </div>
-        <div class="col-md-2">
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+        <div class="col-md-3 text-center">
+          <button ng-click="linkEntrevistras(content.resumo)" class="btn btn-primary tf-btn color">Acesse a Entrevista</button>
         </div>
       </div>
     </div>
@@ -103,11 +103,8 @@
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in resumos">
       <div class="row vertical-align">
         <div class="col-md-10">
-          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
-          <p>{{content.resumo}}</p>
-        </div>
-        <div class="col-md-2">
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+          <h4>{{content.titulo}}</h4>
+          <p ng-bind-html="content.resumo | unsafe"></p>
         </div>
       </div>
     </div>
@@ -115,19 +112,29 @@
 </div>
 <!--artigos-->
 <div id="tf-counter" class="text-center gray-bg fade-in" ng-show="viewAberta == 4">
-  <h1>Artigos</h1>
-  <h3>Artigos publicados pelos profissionais e analistas do IJRS.</h3>
-  <br><br>
-  <div class="row">
+  <h1 ng-hide="openingArtigoOpen">Artigos</h1>
+  <h3 ng-hide="openingArtigoOpen">Artigos publicados pelos profissionais e analistas do IJRS.<br><br></h3>
+  <div class="row fade-in" ng-hide="openingArtigoOpen">
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in artigos">
-      <div class="row vertical-align">
-        <div class="col-md-10">
-          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
-          <p>{{content.resumo}}</p>
+    <br>
+      <div class="row vertical-align text-left">
+        <div class="col-md-12">
+          <h4><strong>{{content.titulo}}</strong></h4>
+          <p ng-bind-html="content.resumo | unsafe"></p>
+          <button class="btn btn-primary tf-btn color" ng-click="openArtigo(content, true)">Ler Artigo</button>
         </div>
-        <div class="col-md-2">
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
-        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row fade-in" ng-show="openingArtigoOpen">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="cada-artigo text-center">
+        <h2><strong>{{openingArtigo.titulo}}</strong></h2>
+        <div class="detalhe"></div>
+        <br>
+        <p ng-bind-html="openingArtigo.resumo | unsafe"></p>
+        <br>
+        <button class="btn btn-primary tf-btn color" ng-click="openArtigo(openingArtigo, false)">Voltar</button>
       </div>
     </div>
   </div>
@@ -141,11 +148,10 @@
     <div class="col-md-10 col-md-offset-1 resumos" ng-repeat="content in acervo">
       <div class="row vertical-align">
         <div class="col-md-10">
-          <h4><i class="fa fa-video-camera"></i>{{content.titulo}}</h4>
-          <p>{{content.resumo}}</p>
-        </div>
-        <div class="col-md-2">
-          <a href="{{content.link}}" class="btn btn-primary tf-btn color">Acesse o vídeo</a>
+          <h4>{{content.titulo}}</h4>
+          <!-- <p ng-bind-html-unsafe="{{content.resumo}}"></p> -->
+          <p ng-bind-html="content.resumo | unsafe"></p>
+          <!-- <p>{{content.resumo}}</p> -->
         </div>
       </div>
     </div>

@@ -37,6 +37,11 @@ app.config(function ($routeProvider, $locationProvider) {
 		controller: "agendaCtrl"
 	})
 
+	.when("/agenda/:id", {
+		templateUrl: "views/agenda.html",
+		controller: "agendaCtrl"
+	})
+
 	// Fotos
 	.when("/fotos", {
 		templateUrl: "views/fotos.html",

@@ -35,6 +35,12 @@
             <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
                 <form id="contact-form" class="form" name="sentMessage"> <!-- form wrapper -->
 
+                    <div class="row fade-in" ng-show="resContato">
+                        <div class="col-md-12">
+                            <p class="resContato">{{resContato.msg}}</p>
+                        </div>
+                    </div>
+                    
                     <div class="row"> <!-- nested inner row -->
 
                         <!-- Input your name -->
@@ -78,6 +84,7 @@
                 </form><!-- end form wrapper -->
             </div><!-- end col 10 with offset 1 to centered -->
         </div> <!-- end contact form outer row with centered text-->
+        
         <div ng-show="sucesso" class="row text-center fade-in successContact">
             <div>
                 <i class="fa fa-check-circle" aria-hidden="true"></i>
@@ -87,5 +94,17 @@
                 <p>Em breve receberá nosso retorno</p>
             </div>
         </div>
+        
+        <div ng-show="error" class="row text-center fade-in successContact">
+            <div>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <div>
+                <p>Erro no envio do contato!</p>
+                <p>Favor tente novamente.</p>
+            </div>
+        </div>
+
+
     </div>
 </div>

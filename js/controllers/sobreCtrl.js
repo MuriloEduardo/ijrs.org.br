@@ -6,15 +6,17 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
         $location.path(route);
     }
 	
-	var dadosForm
-	$http.post('php/dados.php', dadosForm).success(function(data, status){
-
-     // Angular
-     $scope.array.push(data);
-
-	})
-
-    /*
+	/*
+	$http.get("php/sobre.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.profissionais = response.data.profissionais;
+		//$scope.analistas = response.data.analistas;
+		//$scope.diretores = response.data.diretores;
+		//$scope.departamentos = response.data.departamentos;
+		
+    });
+	*/
+	
 	$scope.analistas = [
     	{
     		img: "",
@@ -34,7 +36,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "ANITA MUSSI KLAFKE",
+    		nome: "Anita Mussi Klafke",
     		endereco: "Cel. Pedro Benedet, 505/609 - Ed. Millenium Saúde Center. Criciúma-SC",
     		fone: "(48) 34375229 (48)91469630",
     		email: "anitamk@terra.com.br",
@@ -90,7 +92,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     	},
     	{
     		img: "",
-    		nome: "BENIGNA JUSSARA GANDOLFI",
+    		nome: "Benigna Jussara Gandolfi",
     		endereco: "Av. Getúlio Vargas, 1184/402",
     		fone: "(51) 32336680",
     		email: "jugandolfi@gmail.com",
@@ -144,16 +146,40 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		email: "rosavalente@terra.com.br",
     		sex: "f"
     	},
-    	{
-    		img: "",
-    		nome: "Telma Ripoll Becker",
-    		endereco: "La Plata 455, Jardim Botânico, POA",
-    		fone: "(51) 33319950 e (51)99812826",
-    		email: "telmaripoll@yahoo.com.br",
-    		sex: "f"
-    	}
+        {
+            img: "",
+            nome: "Telma Ripoll Becker",
+            endereco: "La Plata 455, Jardim Botânico, POA",
+            fone: "(51) 33319950 e (51)99812826",
+            email: "telmaripoll@yahoo.com.br",
+            sex: "f"
+        },
+        {
+            img: "",
+            nome: "Rubem Paz",
+            endereco: "Av. Getúlio Vargas, 1157, Conjunto 1310, bairro Menino Deus, Porto Alegre, RS",
+            fone: "51 99550517",
+            email: "rubempaz.psi@gmail.com",
+            sex: "m"
+        },
+        {
+            img: "",
+            nome: "Ingrid Brignol Uberti",
+            endereco: "Atendimento clínico para crianças, adolescentes e adultos. Bagé - RS",
+            fone: "(53) 99627373",
+            email: "ingridbrignoluberti@hotmail.com",
+            sex: "f"
+        },
+        {
+            img: "",
+            nome: "Kátia Adriane Rodrigues Ferreira",
+            endereco: "Gravataí",
+            fone: "(51) 30479777 e (51) 99913003",
+            email: "katia.isabel51@gmail.com",
+            sex: "f"
+        }
     ];
-	*/
+
     $scope.diretores = [
     	{
     		img: "",
@@ -435,7 +461,8 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		colaboradoras: ""
     	}
     ];
-    $scope.profissionais = [
+
+	$scope.profissionais = [
     	{
     		nome: "Adriana S.Ferreira",
     		sobre: "Psicologa, analista Junguiana pela AJB, Mestre em Artes Visuais pela UNICAMP-SP, doutoranda em Multimeios( SONHOS E CINEMA) pela UNICAMP- SP. Estudiosa da vida do CORPO em Jung e  com Stanley Keleman(Anatomia Emocional e outros...) em Berkley-CA-USA.Clinica em São Paulo, e realiza seu trabalho SONHOS E O CORPO em vários lugares do Brasil, ampliando as conexões PSIQUE-CORPO-TOTALIDADE.",
@@ -639,5 +666,7 @@ app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $locati
     		fone: "(54)302147-57, (54)9176-9444",
     		email: "vanicejk@gmail.com"
     	}
+		
     ];
+	
 });

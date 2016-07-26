@@ -1633,3 +1633,16 @@ a.dif{
 input.invalido,textarea.invalido{
     border-color: #ffcc33;
 }
+.resumos{
+    border:solid 5px #ffcc33;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cada-artigo{
+    margin-bottom: 20px;
+}
+.cada-artigo .detalhe{
+    margin:30px auto 0 auto;
+}

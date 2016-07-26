@@ -1,0 +1,16 @@
+/*.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {*/
+.fotos-foto{
+    height: 280px;
+}
+
+.team-detail  h3 {
+    min-height: 60px;
+}
+
+.meta-detail, .comments{ display:none;}
+.bg-destaque-selo p {
+    color: #312e2e;
+}
+#tf-home h1{
+	color:#cd9934;
+}

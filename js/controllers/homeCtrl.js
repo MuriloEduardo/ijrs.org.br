@@ -40,6 +40,19 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 			texto: '"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."',
     	}
 	];
+	
+	$scope.cadastraNewsletter = function(news, valid) {
+		news.tipo = "cadastro";
+    	if(!valid) return false;
+    	$http.post('php/ajax.php', news).success(function(res){
+    		console.log(res)
+    		if(res == 'success'){
+    			$scope.resNews = {msg: 'Cadastro efetuado com sucesso, obrigado!'};
+    		}else{
+    			$scope.resNews = {msg: 'Falha no cadastro, favor tente novamente.'};//{msg: 'Este email já está cadastrado.'};
+    		}
+    	});
+    }
 
 	$('.carousel').carousel({
       interval: 5000

@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 //mysql_set_charset('utf8');
 
@@ -29,7 +29,7 @@ if ($result = $mysqli->query($sqlConteudo)) {
 
 
 //Resumos das Monografias - cont 41
-$sqlConteudo = "select nome as titulo, legenda as subTitulo, arquivo1 as link, texto as resumo  from cms_arquivos where conteudo = 41 and status = 1";
+$sqlConteudo = "select nome as titulo, arquivo1 as link, texto as resumo  from cms_conteudo where id = 41 and status = 1";
 $myArray = array();
 if ($result = $mysqli->query($sqlConteudo)) {
     while($row = $result->fetch_array(MYSQL_ASSOC)) {
@@ -66,10 +66,11 @@ if ($result = $mysqli->query($sqlConteudo)) {
    	$data['acervo'] = $myArray;
 }
 
-//print_r( $myArray);
+//print_r($data['resumos']);
 
 $result->close();
 $mysqli->close();
 
 echo json_encode($data);
 //echo json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+?>

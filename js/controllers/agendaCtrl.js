@@ -1,4 +1,4 @@
-app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $location, $filter) {
+app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $location, $filter, $routeParams) {
 	
     $rootScope.activetab = $location.path();
 
@@ -21,67 +21,18 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
 		var ano = data.getFullYear();  
 		return dia+"/"+mes+"/"+ano;
 	}
+	
+	$http.get("php/agenda.php").then(function(response) {
+        $scope.myData = response.data.records;
+		$scope.agendas = response.data.agendas;
 
-    $scope.agendas = [
-    	{
-    		id: 1,
-    		open: false,
-            like: true,
-    		img: 'img/blog/b02.jpg',
-    		data: dataAtualFormatada(),
-    		titulo: 'Tempor vestibulum turpis id ligula mi mattis.',
-    		resumo: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
-    		texto: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
-    		likes: 10,
-    		views: 234,
-    		comentarios: [
-    			{
-	    			texto: 'Ahh! Que legal, adorei.',
-	    			nome: 'Nome do Usuario Logado',
-                    email: 'exemplo@gmail.com'
-	    		},
-	    		{
-	    			texto: 'Ahh! Que legal, adorei.',
-	    			nome: 'Nome do Usuario Logado',
-                    email: 'exemplo@gmail.com'
-	    		}
-    		]
-    	},
-    	{
-    		id: 2,
-    		open: false,
-            like: true,
-    		img: 'img/blog/b03.jpg',
-    		data: dataAtualFormatada(),
-    		titulo: 'Tempor vestibulum turpis id ligula mi mattis.',
-    		resumo: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
-    		texto: 'Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus Tempor vestibulum turpis id ligula mi mattis. Eget arcu vitae mauris amet odio. Diam nibh diam, quam elit, libero nostra ut. Pellentesque vehicula. Eget sed, dapibus',
-    		likes: 18,
-    		views: 234,
-    		comentarios: [
-    			{
-	    			texto: 'Ahh! Que legal, adorei.',
-	    			nome: 'Nome do Usuario Logado',
-	    			email: 'exemplo@gmail.com'
-	    		},
-                {
-                    texto: 'Ahh! Que legal, adorei.',
-                    nome: 'Nome do Usuario Logado',
-                    email: 'exemplo@gmail.com'
-                },
-                {
-                    texto: 'Ahh! Que legal, adorei.',
-                    nome: 'Nome do Usuario Logado',
-                    email: 'exemplo@gmail.com'
-                },
-                {
-                    texto: 'Ahh! Que legal, adorei.',
-                    nome: 'Nome do Usuario Logado',
-                    email: 'exemplo@gmail.com'
-                }
-    		]
-    	}
-    ]
+        if($routeParams.id){
+            var agenda = $filter('filter')($scope.agendas, function (result) {
+                return result.id === $routeParams.id;
+            })[0];
+            $scope.openAgenda(agenda);
+        }
+    });
 
     $scope.objOpen = {
 		open: undefined,
@@ -131,4 +82,10 @@ app.controller("agendaCtrl", function ($rootScope, $route, $scope, $http, $locat
     		delete $scope.objOpen;
     	}
     }
+});
+
+app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });
