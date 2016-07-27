@@ -15,7 +15,7 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img ng-src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                           <ol class="carousel-indicators">
@@ -60,7 +60,7 @@
                                         Saiba mais
                                     </a>
                                 </div>
-                                <img ng-src="../upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
+                                <img ng-src="./upload/n_{{slider.arquivo1}}" class="img-responsive" alt="">
                             </div>
                           </div>
                           <div class="row">
@@ -80,12 +80,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <div class="row bg-destaque-selo">
+                    <div class="row bg-destaque-selo" ng-repeat="destaque in destaques">
                         <div class="topo-destaque">
                             <h1>DESTAQUE</h1>
                         </div>
-                        <h2>Carl G. Jung</h2>
-                        <p>"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."</p>
+                        <h2>{{destaque.titulo}}</h2>
+                        <p>{{destaque.texto}}</p>
                     </div>
                 </div>
             </div>
@@ -110,67 +110,27 @@
 <div id="tf-intro">
     <div class="container"> <!-- container -->
         <div class="row"> <!-- row -->
-            <div class="col-md-4 col-sm-4 brand others"> <!-- Works #1 col 3 -->
+            <div class="col-md-4 col-sm-4 brand others" ng-repeat="sobre in sobres"> <!-- Works #1 col 3 -->
                 <div class="box"> 
                     <div class="hover-bg">
                         <div class="hover-text off">
-                            <a title="Logo Identity Design" href="#/sobre/" >
+                            <a title="Logo Identity Design" href="#/sobre/{{sobre.id}}" >
                                 <i class="fa fa-expand"></i>
                             </a>
                         </div> 
-                        <img src="img/ijrs/analistas.jpg" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
+                        <img ng-src="img/ijrs/{{sobre.foto}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
                     </div>
                     <div class="abaixo-box">
                         <h2>
                             <div class="detalhe"></div>
-                            Conheça os analistas do IJRS
+                            {{sobre.titulo}}
                         </h2>
-                        <p>Não deixe de conhecer, todos os profissionais e suas informações de contato e formação.</p>
+                        <p>{{sobre.resumo}}</p>
                     </div>
                 </div>
-            </div><!-- end Works #1 col 3 -->
-
-            <div class="col-md-4 col-sm-4 apps margin-brands"> <!-- Works #2 col 3 -->
-                <div class="box">
-                    <div class="hover-bg">
-                        <div class="hover-text off">
-                            <a title="Mobile Application" href="#/sobre/4" >
-                                <i class="fa fa-expand"></i>
-                            </a>
-                        </div>
-                        <img src="img/ijrs/psicologia.jpg" class="img-" alt="Image" width="100%"> <!-- Portfolio Image -->
-                    </div>
-                </div>
-                <div class="abaixo-box">
-                    <h2>
-                        <div class="detalhe"></div>
-                        Saiba mais sobre psicologia analítica
-                    </h2>
-                    <p>Pinceladas dessa bagagem deixada por Carl Gustav Jung.</p>
-                </div>
-            </div><!-- end Works #2 col 3 -->
-
-            <div class="col-md-4 col-sm-4 others brand"><!-- Works #3 col 3 -->
-                <div class="box">
-                    <div class="hover-bg">
-                        <div class="hover-text off">
-                            <a title="Freedom Project #1" href="#/sobre/7" >
-                                <i class="fa fa-expand"></i>
-                            </a>
-                        </div>
-                        <img src="img/ijrs/profissionais.jpg" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
-                    </div>
-                </div>
-                <div class="abaixo-box">
-                    <h2>
-                        <div class="detalhe"></div>
-                        Conheça os profissionais do IJRS
-                    </h2>
-                    <p>Listagem e informações sobre os profissionais do IJRS.</p>
-                </div>
-            </div><!-- end Works #3 col 3 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Service Section
@@ -186,71 +146,26 @@
                     </h2>
                 </div>
                 
-                <div class="row margin-bottom">
+                <div class="row margin-bottom" ng-repeat="foto in fotos">
                     <div class="col-md-12"> <!-- Service #4 -->
                         <div class="col-md-4">
                             <div class="box"> 
                                 <div class="hover-bg">
                                     <div class="hover-text off">
-                                        <a title="Logo Identity Design" href="#/fotos/128">
+                                        <a title="{{foto.titulo}}" href="#/fotos/{{foto.id}}">
                                             <i class="fa fa-expand"></i>
                                         </a>
                                     </div> 
-                                    <img src="http://ijrs.org.br/upload/arq_20131009011813_1.jpg" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
+                                    <img ng-src="{{foto.url}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <h4 class="media-heading"> IJRS e IBGEN</h4>
-                            <p>O IJRS firmou uma parceria com o IBGEN, onde acontecerá a 4ª edição do Curso de Pós-Graduação em Psicologia Clínica Junguiana.</p>
+                            <h4 class="media-heading">{{foto.titulo}}</h4>
+                            <p>{{foto.resumo}}</p>
                         </div>
-                    </div><!-- end Service #4 -->
+                    </div>
                 </div>
-                
-                
-                
-                <div class="row margin-bottom">
-                    <div class="col-md-12"> <!-- Service #4 -->
-                        <div class="col-md-4">
-                            <div class="box"> 
-                                <div class="hover-bg">
-                                    <div class="hover-text off">
-                                        <a title="Logo Identity Design" href="#/fotos/127" >
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div> 
-                                    <img src="img/home/home03.jpg" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h4 class="media-heading">Departamento de Psicologia Quântica</h4>
-                            <p>No dia 04/10/2012 o Departamento de Psicologia Quântica abriu ao público seu primeiro seminário: Autonomia emocional: a prática do bem-estar, com o palestrante Andrei Weber.</p>
-                        </div>
-                    </div><!-- end Service #4 -->
-                </div>
-                
-                <div class="row margin-bottom">
-                    <div class="col-md-12"> <!-- Service #4 -->
-                        <div class="col-md-4">
-                            <div class="box"> 
-                                <div class="hover-bg">
-                                    <div class="hover-text off">
-                                        <a title="Logo Identity Design" href="#/fotos/126" >
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div> 
-                                    <img src="img/home/home02.jpg" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h4 class="media-heading">Departamento de Consciência Feminina e Corpo</h4>
-                            <p>O primeiro encontro do Departamento de Consciência Feminina e Corpo aconteceu no dia 06/09/2013 com a apresentação do filme "Dancing in the Flames", documentário sobre a analista junguiana Marion Woodman.</p>
-                        </div>
-                    </div><!-- end Service #4 -->
-                </div>
-                
             </div>
             <div id="newsletter" class="col-md-4">
                 <div class="section-header">

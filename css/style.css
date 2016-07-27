@@ -1554,7 +1554,7 @@ a.dif{
     padding-right: 0;
 }
 .fotos-section .hover-bg .hover-text{
-    bottom:25%;
+    bottom:40%;
 }
 .cada-foto{
     margin:15px 0;
@@ -1645,4 +1645,8 @@ input.invalido,textarea.invalido{
 }
 .cada-artigo .detalhe{
     margin:30px auto 0 auto;
+}
+.breadcamps{
+    padding: 55px 0 40px 0;
+    font-size: 18px;
 }

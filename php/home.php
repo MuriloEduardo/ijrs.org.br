@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 //utlimas atualizacoe
 $sqlLastATT = "select * from cms_conteudo where status =  1 and mostraHome = 1 order by ordem asc,id desc limit 4";
@@ -29,3 +29,4 @@ $result->close();
 $mysqli->close();
 
 echo json_encode($data);
+?>

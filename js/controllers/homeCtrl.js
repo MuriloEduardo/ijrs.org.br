@@ -40,6 +40,48 @@ app.controller("homeCtrl", function ($rootScope, $route, $scope, $http, $locatio
 			texto: '"Quanto menos os pais aceitem seus própios problemas, tanto mais os filhos sofrerão pela vida não vivida de seus pais e tanto mais serão forçados a realizar tudo quanto os pais reprimiram no inconsciente."',
     	}
 	];
+
+    $scope.sobres = [
+        {
+            id: 1,
+            titulo: 'Conheça os analistas do IJRS',
+            resumo: 'Não deixe de conhecer, todos os profissionais e suas informações de contato e formação.',
+            foto: 'analistas.jpg'
+        },
+        {
+            id: 2,
+            titulo: 'Saiba mais sobre psicologia analítica',
+            resumo: 'Pinceladas dessa bagagem deixada por Carl Gustav Jung.',
+            foto: 'psicologia.jpg'
+        },
+        {
+            id: 3,
+            titulo: 'Conheça os profissionais do IJRS',
+            resumo: 'Listagem e informações sobre os profissionais do IJRS.',
+            foto: 'profissionais.jpg'
+        }
+    ];
+
+    $scope.fotos = [
+        {
+            id: 120,
+            titulo: 'XV JORNADA REGIONAL DO IJRS',
+            resumo: 'O IJRS em parceria com o Ministério Público do Estado do Rio Grande do Sul tem o prazer de convidar para a sua XV Jornada Regional de Psicologia Junguiana.',
+            url: 'http://ijrs.org.br/2016/img/home/home01.jpg'
+        },
+        {
+            id: 126,
+            titulo: 'DEPARTAMENTO DE CONSCIÊNCIA FEMININA E CORPO',
+            resumo: 'O primeiro encontro do Departamento de Consciência Feminina e Corpo aconteceu no dia 06/09/2013 com a apresentação do filme "Dancing in the Flames", documentário sobre a analista junguiana Marion Woodman.',
+            url: 'http://ijrs.org.br/2016/img/home/home02.jpg'
+        },
+        {
+            id: 127,
+            titulo: 'DEPARTAMENTO DE PSICOLOGIA QUÂNTICA',
+            resumo: 'No dia 04/10/2012 o Departamento de Psicologia Quântica abriu ao público seu primeiro seminário: Autonomia emocional: a prática do bem-estar, com o palestrante Andrei Weber.',
+            url: 'http://ijrs.org.br/2016/img/home/home03.jpg'
+        }
+    ];
 	
 	$scope.cadastraNewsletter = function(news, valid) {
 		news.tipo = "cadastro";

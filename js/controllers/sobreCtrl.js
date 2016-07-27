@@ -1,13 +1,15 @@
 app.controller("sobreCtrl", function ($rootScope, $route, $scope, $http, $location, $filter, $routeParams) {
 	
 	$rootScope.activetab = $location.path();
+    $('html,body').scrollTop(0);
 
 	$scope.go = function (route) {
         $location.path(route);
     }
 	
 	if($routeParams.id){
-		$('#fa' + $routeParams.id).trigger('click')
+		$('#fa' + $routeParams.id).trigger('click');
+        $rootScope.activetab = '/sobre';
 	}
 		
 	
