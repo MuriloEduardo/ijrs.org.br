@@ -36,7 +36,7 @@ app.controller("bibliotecaCtrl", function ($rootScope, $route, $scope, $http, $l
         $scope.openingArtigo = artigo;
     }
 
-    $scope.viewsBiblioteca = function(view) {
+    $rootScope.viewsBiblioteca = function(view) {
     	$scope.viewAberta = view;
     }
 });

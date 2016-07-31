@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 $query = "select * from cms_conteudo where status = 1 and categorias = 17 order by ordem,id";
 
@@ -21,4 +21,3 @@ echo json_encode($teste);
 */
 
 ?>
-

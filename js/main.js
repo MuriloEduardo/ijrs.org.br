@@ -148,7 +148,6 @@ function main() {
       // itemsMobile : false
  
   });
- 
 });
 
  

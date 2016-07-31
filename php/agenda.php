@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 
 $sqlConteudo = "select * from cms_conteudo where status = 1 and categorias = 17 order by ordem,id";
@@ -64,3 +64,4 @@ $dataAgenda["comentarios"][0]["email"] = "exemplo@gmail.com";
 //echo $agendas;
 
 echo json_encode($data);
+?>

@@ -37,7 +37,7 @@
     ================================================== -->
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
-     <link rel="stylesheet" type="text/css"  href="css/awat.css">
+    <link rel="stylesheet" type="text/css"  href="css/awat.css">
 
     <!-- Google Fonts
     ================================================== -->
@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="#/">
-                  <img src="img/logo.jpg" alt="...">
+                  <img src="img/logo.jpg" alt="..." class="img-responsive">
                   <div class="col-md-12">
                       <div class="row">
                         <div class="full-name">Instituto Junguiano do Rio Grande do Sul</div>
@@ -77,14 +77,91 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/'}" ng-click="go('/')">Home</a></li>
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/sobre'}" ng-click="go('/sobre')">Sobre o Ijrs</a></li>
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/atividades'}" ng-click="go('/atividades')">Atividades</a></li>
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/biblioteca'}" ng-click="go('/biblioteca')">Biblioteca</a></li>
-                <!-- <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/cursos'}" ng-click="go('/cursos')">Cursos</a></li> -->
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/agenda'}" ng-click="go('/agenda')">Agenda</a></li>
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/fotos'}" ng-click="go('/fotos')">Fotos</a></li>
-                <li><a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/contato'}" ng-click="go('/contato')">Contato</a></li>
+                <li>
+                    <a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/'}" ng-click="go('/')">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" ng-class="{activeMenu: activetab == '/sobre'}" ng-click="go('/sobre')" class="dropdown-toggle scroll" data-toggle="dropdown">Sobre o Ijrs <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#f1" target="_self" aria-controls="f1" role="tab" data-toggle="tab" id="fa1">
+                                Analistas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f2" target="_self" aria-controls="f2" role="tab" data-toggle="tab" id="fa2">
+                                Nossa historia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f3" target="_self" aria-controls="f3" role="tab" data-toggle="tab" id="fa3">
+                                Diretoria Biênio 2015/2017
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f4" target="_self" aria-controls="f4" role="tab" data-toggle="tab" id="fa4">
+                                Psicologia Analítica
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f5" target="_self" aria-controls="f5" role="tab" data-toggle="tab" id="fa5">
+                                Departamentos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f6" target="_self" aria-controls="f6" role="tab" data-toggle="tab" id="fa6">
+                                Proposta
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#f7" target="_self" aria-controls="f7" role="tab" data-toggle="tab" id="fa7">
+                                Profissionais do IJRS
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/atividades'}" ng-click="go('/atividades')">Atividades</a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" ng-class="{activeMenu: activetab == '/biblioteca'}" ng-click="go('/biblioteca')" class="dropdown-toggle scroll" data-toggle="dropdown">Biblioteca <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void(0)" ng-click="viewsBiblioteca(1)">
+                                Monografias completas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" ng-click="viewsBiblioteca(2)">
+                                Entrevistas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" ng-click="viewsBiblioteca(3)">
+                                Resumo de monografias
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" ng-click="viewsBiblioteca(4)">
+                                Artigos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" ng-click="viewsBiblioteca(5)">
+                                Acervo Malvina Mcneill
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/agenda'}" ng-click="go('/agenda')">Agenda</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/fotos'}" ng-click="go('/fotos')">Fotos</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="scroll" ng-class="{activeMenu: activetab == '/contato'}" ng-click="go('/contato')">Contato</a>
+                </li>
               </ul>
             </div>
         </div>
@@ -138,8 +215,8 @@
                         <li><span class="big-footer">(51) 3019 9789</span></li>
                         <li>contato@ijrs.org.br</li>
                         <li>
-                            <a href="#"><i class="fa icons-socials fa-facebook"></i></a>
-                            <a href="#"><i class="fa icons-socials fa-rss"></i></a></a>
+                            <a href="https://facebook.com" target="_blanck"><i class="fa icons-socials fa-facebook"></i></a>
+                            <a href="https://google.com" target="_blanck"><i class="fa icons-socials fa-rss"></i></a></a>
                         </li>
                     </ul>
                 </div>
@@ -153,7 +230,7 @@
                             <p>© 2016 IJRS. Todos os direitos reservados. Desenvolvido por <a href="http://www.awat.com.br" target="_blank">AWAT.</a></p>
                         </div>
                         <div class="col-md-6 text-right">
-                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                            <i class="fa fa-arrow-up" id="toTop" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -212,6 +289,5 @@
 
     <!-- Contato -->
     <script src="js/controllers/contatoCtrl.js"></script>
-    
   </body>
 </html>

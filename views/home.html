@@ -10,7 +10,7 @@
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner" role="listbox" >
                             <div class="item hover-bg" ng-class="{active:$first}" ng-repeat="slider in sliders">
-                                <div class="hover-text off">
+                                <div class="hover-text link-vrtical-align off">
                                     <a title="{{slider.nome}}" href="#/agenda/{{slider.id}}">
                                         Saiba mais
                                     </a>
@@ -55,7 +55,7 @@
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner" role="listbox" >
                             <div class="item hover-bg"  ng-class="{active:$first}" ng-repeat="slider in sliders">
-                                <div class="hover-text off">
+                                <div class="hover-text link-vrtical-align off">
                                     <a title="" href="#/sobre">
                                         Saiba mais
                                     </a>
@@ -112,7 +112,7 @@
         <div class="row"> <!-- row -->
             <div class="col-md-4 col-sm-4 brand others" ng-repeat="sobre in sobres"> <!-- Works #1 col 3 -->
                 <div class="box"> 
-                    <div class="hover-bg">
+                    <div class="hover-bg" style="height:140px">
                         <div class="hover-text off">
                             <a title="Logo Identity Design" href="#/sobre/{{sobre.id}}" >
                                 <i class="fa fa-expand"></i>
@@ -148,21 +148,23 @@
                 
                 <div class="row margin-bottom" ng-repeat="foto in fotos">
                     <div class="col-md-12"> <!-- Service #4 -->
-                        <div class="col-md-4">
-                            <div class="box"> 
-                                <div class="hover-bg">
-                                    <div class="hover-text off">
-                                        <a title="{{foto.titulo}}" href="#/fotos/{{foto.id}}">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div> 
-                                    <img ng-src="{{foto.url}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="box"> 
+                                    <div class="hover-bg" style="height:140px">
+                                        <div class="hover-text off">
+                                            <a title="{{foto.titulo}}" href="#/fotos/{{foto.id}}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div> 
+                                        <img ng-src="{{foto.url}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h4 class="media-heading">{{foto.titulo}}</h4>
-                            <p>{{foto.resumo}}</p>
+                            <div class="col-md-8">
+                                <h4 class="media-heading">{{foto.titulo}}</h4>
+                                <p>{{foto.resumo}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,40 +176,28 @@
                         newsletter Ijrs
                     </h2>
                 </div>
-                       <div ng-hide="sucesso" class="row text-center fade-in"> <!-- contact form outer row with centered text-->
-            <div class="col-md-10 col-md-offset-1"> <!-- col 10 with offset 1 to centered -->
+               <div ng-hide="sucesso" class="row text-center fade-in">
 
 
-<form id="contact-form" class="form ng-pristine ng-invalid ng-invalid-required ng-valid-email" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
-                    <div class="row fade-in ng-hide" ng-show="resNews">
-                        <div class="col-md-12">
+                <form id="contact-form" class="form ng-pristine ng-invalid ng-invalid-required ng-valid-email" name="sentMessage" ng-submit="cadastraNewsletter(news, sentMessage.$valid)"> <!-- form wrapper -->
+                    <div class="col-md-12">
+                        <div class="fade-in ng-hide" ng-show="resNews">
                             <p class="resNews ng-binding"></p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group"> <!-- Your name input -->
-                                <input type="text" ng-model="news.nome" autocomplete="off" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" placeholder="Seu nome *" id="name" ng-class="{invalido: sentMessage.$invalid &amp;&amp; send}" required="" data-validation-required-message="Por favor coloque seu nome.">
-                                <p class="help-block text-danger"></p>
-                            </div>
+                        <div class="form-group"> <!-- Your name input -->
+                            <input type="text" ng-model="news.nome" autocomplete="off" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" placeholder="Seu nome *" id="name" ng-class="{invalido: sentMessage.$invalid &amp;&amp; send}" required="" data-validation-required-message="Por favor coloque seu nome.">
+                            <p class="help-block text-danger"></p>
                         </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group"> <!-- Your email input -->
-                                <input type="email" ng-model="news.email" ng-class="{invalido: sentMessage.$invalid &amp;&amp; send}" autocomplete="off" class="form-control ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-touched" placeholder="Seu Email *" id="email" required="" data-validation-required-message="Por favor coloque seu email.">
-                                <p class="help-block text-danger"></p>
-                            </div>
+                        <div class="form-group"> <!-- Your email input -->
+                            <input type="email" ng-model="news.email" ng-class="{invalido: sentMessage.$invalid &amp;&amp; send}" autocomplete="off" class="form-control ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-touched" placeholder="Seu Email *" id="email" required="" data-validation-required-message="Por favor coloque seu email.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="text-left">
+                            <button type="submit" ng-click="send=true" class="btn btn-primary tf-btn color">Assinar</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" ng-click="send=true" class="btn btn-primary tf-btn color">Assinar</button> <!-- Send button -->
-                        </div>
-                    </div>
-                </form><!-- end form wrapper -->
-                
-                            </div><!-- end col 10 with offset 1 to centered -->
-        </div> <!-- end contact form outer row with centered text-->
+                </form>
+        </div>
 
 
                 <div ng-show="sucesso" class="row text-center fade-in successCadastro ng-hide">
@@ -226,7 +216,9 @@
                     </h2>
                 </div>
                 <div class="mapa-right">
-                    <img src="img/map.jpg" alt="" class="img-responsive">
+                    <a href="#/contato">
+                        <img src="img/map.jpg" alt="Contato" class="img-responsive">
+                    </a>
                 </div>
             </div>
         </div>

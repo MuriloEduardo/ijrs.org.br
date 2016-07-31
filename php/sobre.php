@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 
 
@@ -38,3 +38,4 @@ $result->close();
 $mysqli->close();
 
 echo json_encode($data);
+?>

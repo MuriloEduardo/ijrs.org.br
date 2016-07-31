@@ -3,7 +3,7 @@
         <div class="row" role="tabpanel">
             <div class="col-md-4">
 
-                <ul class="features nav nav-pills nav-stacked" role="tablist">
+                <ul class="features nav nav-pills nav-stacked escondeQuandoMobile" role="tablist">
                     <li role="presentation" class="active">
                         <a href="#f1" target="_self" aria-controls="f1" role="tab" data-toggle="tab" id="fa1">
                             <span class="fa fa-user"></span>
@@ -52,24 +52,26 @@
             <div class="col-md-8"> 
                 <div class="tab-content features-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="f1">
-                        <div class="col-md-12 no-padding-right">
-                            <div class="search-head">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                                <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaAnalistas">
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row cada-anal" ng-repeat="analista in analistas | filter:buscaAnalistas">
-                                    <div class="detalhe-thin"></div>
-                                    <div class="col-md-2 col-xs-2">
-                                        <div class="img-perfil">
-                                            <img ng-src="img/profissionais/{{analista.nome}}.jpg" alt="{{analista.nome}}">
+                        <div class="row">
+                            <div class="col-md-12 no-padding-right">
+                                <div class="search-head">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <input type="text" class="form-control" placeholder="Busque por qualquer informação, basta digitar" ng-model="buscaAnalistas">
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row cada-anal" ng-repeat="analista in analistas | filter:buscaAnalistas">
+                                        <div class="detalhe-thin"></div>
+                                        <div class="col-md-2">
+                                            <div class="img-perfil">
+                                                <img ng-src="img/profissionais/{{analista.img}}" alt="{{analista.nome}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-10 col-xs-10">
-                                        <h4>{{analista.nome}}</h4>
-                                        <p ng-if="analista.endereco != ''"><strong><i class="fa fa-map-marker alinhado" aria-hidden="true"></i></strong> {{analista.endereco}}</p>
-                                        <p ng-if="analista.fone != ''"><strong><i class="fa fa-phone alinhado" aria-hidden="true"></i></strong> {{analista.fone}}</p>
-                                        <p ng-if="analista.email != ''"><strong><i class="fa fa-envelope alinhado" aria-hidden="true"></i></strong> <a href="mailto:{{analista.email}}">{{analista.email}}</a></p>
+                                        <div class="col-md-10 col-xs-10">
+                                            <h4>{{analista.nome}}</h4>
+                                            <p ng-if="analista.endereco != ''"><strong><i class="fa fa-map-marker alinhado" aria-hidden="true"></i></strong> {{analista.endereco}}</p>
+                                            <p ng-if="analista.fone != ''"><strong><i class="fa fa-phone alinhado" aria-hidden="true"></i></strong> {{analista.fone}}</p>
+                                            <p ng-if="analista.email != ''"><strong><i class="fa fa-envelope alinhado" aria-hidden="true"></i></strong> <a href="mailto:{{analista.email}}">{{analista.email}}</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -104,9 +106,9 @@
                                     <div class="col-md-12">
                                         <h4><strong>{{diretor.cargo}}</strong></h4>
                                     </div>
-                                    <div class="col-md-2 col-xs-2" ng-if="diretor.sex != ''">
+                                    <div class="col-md-2" ng-if="diretor.sex != ''">
                                         <div class="img-perfil">
-                                            <img ng-src="img/profissionais/{{diretor.nome}}.jpg" alt="{{diretor.nome}}">
+                                            <img ng-src="img/profissionais/{{diretor.img}}" alt="{{diretor.nome}}">
                                         </div>
                                     </div>
                                     <div class="col-md-10 col-xs-10">
@@ -232,9 +234,9 @@
                             <div class="col-md-12">
                                 <div class="row cada-anal" ng-repeat="profissional in profissionais | filter:buscaProfissional">
                                     <div class="detalhe-thin"></div>
-                                    <div class="col-md-2 col-xs-2">
+                                    <div class="col-md-2">
                                         <div class="img-perfil">
-                                            <img ng-src="img/profissionais/{{profissional.nome}}.jpg" alt="{{profissional.nome}}">
+                                            <img ng-src="img/profissionais/{{profissional.img}}" alt="{{profissional.nome}}">
                                         </div>
                                     </div>
                                     <div class="col-md-10 col-xs-10">

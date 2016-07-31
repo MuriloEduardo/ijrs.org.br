@@ -15,10 +15,6 @@
     visibility: visible;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
 .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
     margin-top: 0;
 }
@@ -525,7 +521,7 @@ ul.social li a.fa:hover { background-color: #333333 }
 .facts .count-box { 
     position: relative;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 9px;
 }
 .count-box {
     -webkit-backface-visibility: hidden;
@@ -595,7 +591,7 @@ ul.social li a.fa:hover { background-color: #333333 }
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-.item .hover-bg {
+.hover-bg {
     position: relative;
     overflow: hidden;
 }
@@ -623,13 +619,19 @@ ul.social li a.fa:hover { background-color: #333333 }
     -webkit-transform: translateX(100%) translateY(-90%);
     transform: translateX(100%) translateY(-90%);
     opacity: 1;
-    height: auto;
+    height: 100%;
+    text-align: center;
     background: rgba(0, 0, 0, 0.70);
 }
 .hover-bg:hover .hover-text.off {
-    -webkit-transform: translateX(0%) translateY(-90%);
-    transform: translateX(0%)  translateY(-90%);
+    -webkit-transform: translateX(0%) translateY(0%);
+    transform: translateX(0%)  translateY(0%);
     opacity: 1;
+}
+.hover-text.link-vrtical-align a,
+.hover-text p{
+    top: 45%;
+    position: relative;
 }
 .owl-theme .owl-controls .owl-page span {
     width: 15px;
@@ -699,7 +701,8 @@ ul.cat li a.active {
 .box .hover-bg {
     position: relative;
     overflow: hidden;
-    height: 140px;
+    height: 100%;
+    max-height: 100%;
 }
 .box .hover-bg .hover-text {
     height: 100%;
@@ -840,6 +843,12 @@ ul.cat li a.active {
 .nivo-lightbox-error {
     color: #C59A6D !important;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0) !important;
+}
+.close-modal{
+    margin-top: 15px;
+    padding: 0 15px;
+    width: 100%;
+    height: 30px;
 }
 .nivo-lightbox-theme-default .nivo-lightbox-image img {
     background: #fff;
@@ -1281,6 +1290,7 @@ ul.meta-tags li:last-child:after { content: ' ' }
 .mapa-right{
     background-color: #eee;
     height: 200px;
+    position: relative;
 }
 #tf-services .margin-bottom{
     margin-bottom: 50px;
@@ -1381,6 +1391,7 @@ i.alinhado{
 }
 .search-head input[type="text"]{
     transition: all .2s ease-in-out;
+    padding-right: 50px;
 }
 .nav-stacked{
     margin-bottom: 20px;
@@ -1408,9 +1419,6 @@ a.dif{
     text-decoration: none;
     color: #ffcc33;
 }
-.no-padding-right{
-    padding-right: 0;
-}
 .no-padding-b{
     padding-bottom: 0;
 }
@@ -1418,11 +1426,14 @@ a.dif{
     padding-top: 0;
 }
 #myCarousel .hover-bg .hover-text,#myCarousel-mobile .hover-bg .hover-text{
-    height: 150px;
+    height: 100%;
     text-align: center;
-    line-height: 90px;
+    line-height: 100%;
     font-size: 18px;
     text-transform: uppercase;
+}
+nav.navbar {
+    transition: all 0.2s ease-in-out;
 }
 #myCarousel .hover-bg .hover-text a:hover, a:focus,#myCarousel-mobile .hover-bg .hover-text a:hover, a:focus{
     border-bottom: solid 2px #fff;
@@ -1434,12 +1445,21 @@ a.dif{
 .mostraQuandoMobile{
     display:none;
 }
-/*menos no mobile */
+.caret{
+   display: none;
+}
+/* menos no mobile */
 @media(min-width: 767px) {
     .navbar-nav > li > a{
         font-size:.8vw;
         margin:20px 5px;
     }   
+    .no-padding-right{
+        padding-right: 0;
+    }
+    .dropdown-menu{
+        display: none !important;
+    }
 }
 @media(min-width: 991px) {
     .vertical-align {
@@ -1447,14 +1467,30 @@ a.dif{
         align-items: center;
     }
 }
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #333;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: transparent;
+}
 /*MOBILE*/
 @media (max-width: 767px) {
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+        color: #333;
+        background-color: #fff;
+    }
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: #555;
+        background-color: #fff;
+    }
     #tf-home.app .overlay{
         padding: 30% 0 5% 0;
     }
     #myCarousel .hover-bg .hover-text {
-        height: 140px;
-        line-height: 30px;
+        height: 100%;
+        line-height: 100%;
     }
     .navbar-toggle{
         padding: 24px 10px;
@@ -1488,6 +1524,21 @@ a.dif{
     }
     .mostraQuandoMobile{
         display:block;
+    }
+    .navbar-brand{
+        padding: 0;
+    }
+    .navbar-brand img{
+        margin: 0 auto;
+    }
+    nav.navbar.shrink {
+        top: -100px;
+    }
+    .caret{
+        display: inline-block;
+    }
+    .navbar-brand{
+        padding: 12px 2.5px;
     }
 }
 .full-name{
@@ -1551,10 +1602,6 @@ a.dif{
     padding-top: 30px;
     padding-bottom: 30px;
     overflow:hidden;
-    padding-right: 0;
-}
-.fotos-section .hover-bg .hover-text{
-    bottom:40%;
 }
 .cada-foto{
     margin:15px 0;
@@ -1647,6 +1694,58 @@ input.invalido,textarea.invalido{
     margin:30px auto 0 auto;
 }
 .breadcamps{
-    padding: 55px 0 40px 0;
+    padding: 55px 15px 40px 15px;
     font-size: 18px;
+}
+.breadcamps span:first-child{
+    cursor: pointer;
+}
+.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin: 0 10px;
+}
+.dropdown-toggle{
+    margin-bottom: 0 !important;
+}
+.dropdown-menu{
+    padding: 0;
+}
+.dropdown-menu li a{
+    text-align: center;
+}
+@media (max-width: 768px){
+    .navbar-collapse.collapse.in {
+        margin-top: 10px;
+    }
+}
+.glyphicon-chevron-right:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.glyphicon-chevron-left:before {
+    content: "\f053";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.cada-agenda{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.03);
+}
+.footer-cada-agenda{
+    border-top: solid thin #ebebeb;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.cada-agenda a img{
+    margin-bottom: 20px;
 }

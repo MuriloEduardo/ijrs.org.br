@@ -22,6 +22,20 @@ app.controller("fotosCtrl", function ($rootScope, $route, $scope, $http, $locati
     		$scope.contentGaleria = false;
     	}
     }
+
+    $scope.activeGaleriaFotos = function(objFotoCurrent, objOpenImageCurrent) {
+        if(objOpenImageCurrent){
+            if(objFotoCurrent.id == objOpenImageCurrent.id){
+                return true;
+            }
+        }else{
+            return true;
+        }
+    }
+
+    $('.carousel').carousel({
+      interval: 1000
+    });
 	
 	
 	$http.get("php/fotos.php").then(function(response) {

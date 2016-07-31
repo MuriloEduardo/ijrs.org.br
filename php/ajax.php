@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 
 $data = json_decode(file_get_contents("php://input")); 
@@ -43,6 +43,6 @@ switch ($data->tipo) {
 		}
 
 
-        break;
-		
+        break;		
 }
+?>

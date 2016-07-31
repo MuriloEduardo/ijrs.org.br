@@ -1,12 +1,42 @@
 <div id="blog-post" class="gray-bg">
     <div class="container">
-        <div class="row fade-in" ng-hide="objOpen.open">
-            <div class="col-md-6" ng-repeat="agenda in agendas">
+        <div ng-repeat="agenda in agendas">
+            <div ng-hide="objOpen.open">
+                <div class="col-md-6">
+                    <div class="cada-agenda">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="javascript:void(0)" ng-click="openAgenda(agenda)" ng-if="!img">
+                                  <img class="img-responsive" ng-src="./upload/{{agenda.img}}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="small">{{agenda.data}}</p>
+                                <a href="javascript:void(0)" ng-click="openAgenda(agenda)">
+                                    <h5 class="media-heading"><strong>{{agenda.titulo}}</strong></h5>
+                                </a>
+                                <p ng-bind-html="agenda.resumo | unsafe"></p>
+                            </div>
+                        </div>
+                        <div class="row footer-cada-agenda">
+                            <div class="col-md-12">
+                                <a href="javascript:void(0)" ng-click="openAgenda(agenda)">Ler Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="row fade-in" >
+            <div class="col-md-6" >
                 <div class="post-wrap">
                     <div class="media post">
                         <div class="media-left"> 
                             <a href="javascript:void(0)" ng-click="openAgenda(agenda)" ng-if="!img">
-                              <img class="media-object" ng-src="{{agenda.img  || '//:0' }}" alt="">
+                              <img class="media-object" ng-src="./upload/{{agenda.img}}" alt="">
                             </a>
                         </div>
                         <div class="media-body">
@@ -19,7 +49,7 @@
                     </div>
                     <div class="post-meta">
                         <ul class="list-inline metas pull-left">
-                            <!-- <li><a href="javascript:void(0)">{{agenda.comentarios.length}} Comentários</a></li> -->
+                            <li><a href="javascript:void(0)">{{agenda.comentarios.length}} Comentários</a></li>
                             <li><a href="javascript:void(0)" ng-click="openAgenda(agenda)">Ler Mais</a></li>
                         </ul>
                         <ul class="list-inline meta-detail pull-right">
@@ -29,13 +59,38 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row fade-in" ng-show="objOpen.open">
+            <div class="col-md-12">
+                <div class="cada-agenda">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="javascript:void(0)">
+                              <img class="img-responsive" ng-src="./upload/{{objOpen.img}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <p class="small">{{objOpen.data}}</p>
+                            <a href="javascript:void(0)">
+                                <h5 class="media-heading"><strong>{{objOpen.titulo}}</strong></h5>
+                            </a>
+                            <p ng-bind-html="objOpen.resumo | unsafe"></p>
+                        </div>
+                    </div>
+                    <div class="row footer-cada-agenda">
+                        <div class="col-md-12">
+                            <a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar para Agenda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row fade-in" ng-show="objOpen.open">
             <div class="post-wrap">
                 <div class="media post">
                     <div class="media-left"> 
                         <a href="javascript:void(0)">
-                          <img class="media-object" ng-src="{{objOpen.img}}" alt="">
+                          <img class="media-object" ng-src="./upload/{{objOpen.img}}" alt="">
                         </a>
                     </div>
                     <div class="media-body">
@@ -48,7 +103,7 @@
                 </div>
                 <div class="post-meta">
                     <ul class="list-inline metas pull-left">
-                        <!-- <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li> -->
+                        <li><a href="javascript:void(0)">{{objOpen.comentarios.length}} Comentários</a></li>
                         <li><a href="javascript:void(0)" ng-click="openAgenda(false)">Voltar para Agenda</a></li>
                     </ul>
                     <ul class="list-inline meta-detail pull-right">
@@ -90,6 +145,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

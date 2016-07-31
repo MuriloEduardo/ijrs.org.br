@@ -1,4 +1,4 @@
-<? 
+<?php 
 include "conn.php";
 
 $query ="select * from cms_arquivos where status = 1 and conteudo = 38 order by ordem,id";
@@ -17,3 +17,4 @@ $result->close();
 $mysqli->close();
 
 
+?>
