@@ -75,7 +75,7 @@ if ($result = $mysqli->query($sql)) {
 //Departamentos
 $sql ="select *
   from departamentos
-  where status = 1 and tipoDep = 0
+  where tipoDep = 0
   order by ordem
   ";
 $myArray = array();

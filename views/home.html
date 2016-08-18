@@ -25,12 +25,12 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 text-center">
-                    <div class="row bg-destaque-selo" ng-repeat="destaque in destaques">
+                    <div class="row bg-destaque-selo">
                         <div class="topo-destaque">
                             <h1>DESTAQUE</h1>
                         </div>
                         <h2>{{destaque.titulo}}</h2>
-                        <p>{{destaque.texto}}</p>
+                        <p ng-bind-html="destaque.texto | unsafe"></p>
                     </div>
                 </div>
             </div>
@@ -157,13 +157,13 @@
                                                 <i class="fa fa-expand"></i>
                                             </a>
                                         </div> 
-                                        <img ng-src="{{foto.url}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
+                                        <img ng-src="upload/{{foto.url}}" class="img-responsive" alt="Image"> <!-- Portfolio Image -->
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <h4 class="media-heading">{{foto.titulo}}</h4>
-                                <p>{{foto.resumo}}</p>
+                                <p ng-bind-html="foto.resumo | unsafe"></p>
                             </div>
                         </div>
                     </div>

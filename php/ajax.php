@@ -31,11 +31,12 @@ switch ($data->tipo) {
 		
 			
 		// Create the email and send the message
-		$to = 'lucianoluconi@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+		$to = 'joycewerres@yahoo.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 		$email_subject = "Contato do Site IJRS:  $name";
 		$email_body = "Segue mensagem.\n\n"."Nome: $name\n\nEmail: $email_address\n\nFone: $phone\n\nMensagem:\n$message";
 		$headers = "From: site@ijrs.org.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-		$headers .= "Reply-To: $email_address";	
+		$headers .= "Reply-To: $email_address\n";	
+		$headers .= "Cc: lucianoluconi@gmail.com";
 		if( mail($to,$email_subject,$email_body,$headers,"-r" . "site@ijrs.org.br")){
 			echo "success";
 		} else {

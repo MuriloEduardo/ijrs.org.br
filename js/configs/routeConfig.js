@@ -16,6 +16,17 @@ app.config(function ($routeProvider, $locationProvider) {
 		templateUrl: "views/sobre.html",
 		controller: "sobreCtrl"
 	})
+	
+	
+	//para aprovacoes
+	.when("/dev", {
+		templateUrl: "views/dev.html",
+		controller: "devCtrl"
+	})
+	.when("/dev/:id", {
+		templateUrl: "views/dev.html",
+		controller: "devCtrl"
+	})
 
 	// Atividades
 	.when("/atividades", {

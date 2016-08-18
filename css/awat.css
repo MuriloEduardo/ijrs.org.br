@@ -14,3 +14,9 @@
 #tf-home h1{
 	color:#cd9934;
 }
+
+.img-perfil {
+    width: 95px;
+    height: 115px;
+    border-radius: 0;
+}
